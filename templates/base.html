@@ -32,7 +32,66 @@
     <title>Crushed Grapes {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-      <header class="container-fluid fixed-top"></header>
+      <header class="container-fluid fixed-top">
+        <div class="row">
+          <div class="col-12 col-lg-4">
+            <a href="{% url 'home' %}">
+              <h2 class="logo text-black">Crushed Grapes</h2>
+            </a>
+          </div>
+          <div class="col-12 col-lg-4">
+            <form action="" method="GET">
+              <div class="input-group w-100">
+                <input type="text" class="form-control" name="q" placeholder="Search the site">
+                <div class="input-group-append">
+                  <button type="submit" class="form-control btn btn-black"></button>
+                  <span class="icon"><i class="fas fa-search"></i></span>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-12 col-lg-4">
+            <ul class="list-inline list-unstyled text-center text-lg-right">
+              <li class="list-inline-item dropdown">
+                <a href="#" id="dropdownMenu" data-toggle="dropdown" aria-expanded="false">
+                    <div class="text-center">
+                        <div><i class="fas fa-user fa-lg"></i></div>
+                        <p>Account</p>
+                      <div>
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="account-options">
+                      {% if request.user.is_authenticated %}
+                          {% if request.user.is_superuser %}
+                            <a class="dropdown-item" href="#">Manage Products</a>
+                          {% endif %}
+                          <a class="dropdown-item" href="#">My Account</a>
+                          <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                      {% else %} 
+                          <a class="dropdown-item" href="{% url 'account_signup' %}">Create Account</a>
+                          <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                      {% endif %}    
+                  </div>
+                  </div>              
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="" class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link">
+                  <div class="text-center">
+                    <div><i class="fas fa-shopping bag fa-lg"></i>Shopping Cart</div>
+                    <p> 
+                      {% if grand_total %}
+                          €{{ grand_total|floatformat:2 }}
+                      {% else %}
+                          €0.00
+                      {% endif %}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>       
+      </header>
 
       {% if messages %}
             <div class="message-container"></div>
