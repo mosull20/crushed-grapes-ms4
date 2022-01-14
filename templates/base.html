@@ -37,13 +37,13 @@
   </head>
   <body>
       <header class="container-fluid fixed-top">
-        <div id="topnav" class="row bg-white pt-3">
-          <div class="col-12 col-md-4">
+        <div id="topnav" class="row bg-white pt-3 d-none d-lg-flex">
+          <div class="col-12 col-lg-4">
             <a href="{% url 'home' %}">
               <h2 class="logo text-black">Crushed Grapes</h2>
             </a>
           </div>
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-lg-4">
             <form action="" method="GET">
               <div class="input-group w-100">
                 <input type="text" class="form-control" name="q" placeholder="Search the site">
@@ -55,10 +55,10 @@
               </div>
             </form>
           </div>
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-lg-4">
             <ul class="list-inline list-unstyled text-center text-lg-right">
               <li class="list-inline-item dropdown">
-                <a href="#" id="dropdownMenu" data-toggle="dropdown" aria-expanded="false">
+                <a href="#" id="account-options" data-toggle="dropdown" aria-expanded="false">
                     <div class="text-center">
                         <div><i class="fas fa-user fa-lg"></i></div>
                         <p>Account</p>
@@ -101,7 +101,8 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
                 </button>
-                {% include 'includes/main-nav.html %}
+                {% include 'includes/mobile-nav.html' %}
+                {% include 'includes/main-nav.html' %} 
             </nav>
         </div>     
       </header>
