@@ -12,6 +12,11 @@ body {
     color: #18020C;
 }
 
+/* Navbar */
+
+#topnav {
+    height: 80px;
+}
 /* Footer */
 .social-links a {
     color: #18020C;
