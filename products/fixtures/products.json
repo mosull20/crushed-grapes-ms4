@@ -1,0 +1,257 @@
+[
+    {
+       "pk":1,
+       "model":"products.product",
+       "fields":{
+          "name":"Faustino V White Rioja",
+          "country":"Spain",
+          "region":"Rioja Alavesa",
+          "grape_variety":"Chardonnay, Viura",
+          "year":2020,
+          "description":"A distinctive wine of Rioja, complimenting all foods and ideal for any occasion. Viura and Chardonnay grapes. Fermented under low temperature and controlled conditions. Excellent with many everyday foods, fish & chips, salads and omelets. The winery has an number of vineyards in the heart of the Rioja Alavesa region, between the towns of Laguardia & Oyón.",
+          "price":17.00,
+          "category":2,
+          "rating":4.6,
+          "image_url":"",
+          "image":"faustino-white.png"
+       }
+    },
+    {
+        "pk":2,
+        "model":"products.product",
+        "fields":{
+           "name":"Torres Sangre De Toro Verdejo",
+           "country":"Spain",
+           "region":"Rueda",
+           "grape_variety":"Verdejo",
+           "year":2020,
+           "description":"Following in the footsteps of Miguel Torres Carbó, we search for the best varieties in Spain to give this wine a truly authentic personality.",
+           "price":12.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":"torres-white.png"
+       }
+    },
+    {
+        "pk":3,
+        "model":"products.product",
+        "fields":{
+           "name":"Paco y Lola Albarino",
+           "country":"Spain",
+           "region":"Rías Baixas",
+           "grape_variety":"Albariño",
+           "year":2019,
+           "description":"The freshest, most fun and chic Albariño of the Rías Baixas. It makes you feel good to be alive and gets everyone smiling whenever a bottle is cracked open! Paco & Lola is a young, modern winery, committed to a fresh way of making and experiencing wine. Known around the world for our sophisticatedly fun image, We Are The Polka-Dot Wine.",
+           "price":15.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":4,
+        "model":"products.product",
+        "fields":{
+           "name":"Rizzardi Pinot Grigio",
+           "country":"Italy",
+           "region":"Veneto",
+           "grape_variety":"Pinot Grigio",
+           "year":2020,
+           "description":"Guerrieri Rizzardi is the result of the union between two venerable winemaking families that date back to the 17th century and this single-estate Pinot Grigio expresses the result of generations of winemaking knowledge. This Pinot Grigio is crisp, dry and bursting with ripe pear and peachy fruit before a touch of honey and spice on the long fresh finish.",
+           "price":15.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":5,
+        "model":"products.product",
+        "fields":{
+           "name":"Ophalum Albariño",
+           "country":"Spain",
+           "region":"Rías Baixas",
+           "grape_variety":"Albariño",
+           "year":2020,
+           "description":"This zesty Albariño is made by the Paco y Lola winery in the Salnés Valley. It has the typical pear and citrus fruit profile of Galician Albariño with a saline mineral note on the long tropical fruit finish. The crisp acidity is an ideal pairing to cut through oily fish or tapas dishes.",
+           "price":18.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":6,
+        "model":"products.product",
+        "fields":{
+           "name":"Chanson Pouilly-Fuissé",
+           "country":"France",
+           "region":"Burgundy",
+           "grape_variety":"Chardonnay",
+           "year":2016,
+           "description":"Domain Chanson are owned by Champagne Bollinger and no attention to detail is missed in terms of vineyard work or cellar investment. The vineyards of Pouilly Fuissé are located in the southern part of Burgundy, in the heart of the Mâconnais region. The 2016 vintage saw a cool winter and a warm dry summer, after harvest mid-September, the wine was partially aged in oak casks giving some roundness and texture to the wine. Chanson Pouilly Fuissé hints at floral and citrus notes on the nose and palate with some white pear, the palate is well-balanced and precise with a mineral thread against a dense, tight texture followed by a long and refreshing finish.",
+           "price":30.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":7,
+        "model":"products.product",
+        "fields":{
+           "name":"Whitehaven Sauvignon Blanc",
+           "country":"New Zealand",
+           "region":"Marlborough",
+           "grape_variety":"Sauvignon Blanc",
+           "year":2021,
+           "description":"This wine has incredible freshness and clean fruit purity, with a finely balanced, refreshing acidity. The palate shows vibrant varietal flavours of passionfruit, tomato leaf, citrus and tropical fruit flavours that is quintessentially Marlborough.",
+           "price":17.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":8,
+        "model":"products.product",
+        "fields":{
+           "name":"Tordo Alvarinho",
+           "country":"Portugal",
+           "region":"Vinho Verde",
+           "grape_variety":"Alvarinho",
+           "year":2020,
+           "description":"The Carneiro family estate is located in Basto, in Portugal's northern Vinho Verde region. This wine is made from the Alvarinho grape variety, better known across the border in Galicia as Albariño. The grapes come from warm, inland vineyards and are hand-harvested before being fermented in the family's modern stainless-steel winery. The bright and clear wine offers flavours of grapefruit and pineapple, with perfectly integrated acidity. A characterful Vinho Verde that would pair wonderfully with fresh shellfish enjoyed in the garden on a sunny afternoon.",
+           "price":15.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":9,
+        "model":"products.product",
+        "fields":{
+           "name":"Adobe Organic Sauvignon Blanc",
+           "country":"Chile",
+           "region":"Casablanca Valley",
+           "grape_variety":"Sauvignon Blanc",
+           "year":2020,
+           "description":"Emiliana is one of the world's largest procuders of estate grown organic wines in the world. This organic Sauvignon Blanc is grown in the cooler climate of the Casablanca Valley, it is lively zesty and juicy with good fresh acidity and citrus fruit flavoured finish.",
+           "price":15.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":10,
+        "model":"products.product",
+        "fields":{
+           "name":"Delheim Chardonnay Sur Lie",
+           "country":"South Africa",
+           "region":"Stellenbosch",
+           "grape_variety":"Chardonnay",
+           "year":2020,
+           "description":"The family owned Delheim estate is one of the top wineries in South Africa with a firm commitment to social and environmental sustainability programs. Their Chardonnay Sur Lie is an elegant, Burgundian-styled wine with the 9 months oak ageing adding a silky texture and delicate toasted hazelnut note without masking the ripe pear and red apple fruit. This is as good as oaked Chardonnay comes and would age gracefully for at least 5 years.",
+           "price":27.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":11,
+        "model":"products.product",
+        "fields":{
+           "name":"Cepas Privadas Sauvignon Blanc",
+           "country":"Argentina",
+           "region":"Mendoza",
+           "grape_variety":"Sauvignon Blanc",
+           "year":2020,
+           "description":"This wine is sourced from our selected vineyards in Mendoza, Argentina's most important wine region. 400 years ago, the centuries of expertise of the Spanish men who founded the city, was combined with Mendoza grown grapes, to create truly special, intense Argentinean wines. This is a homage to the hands that first crafted them.",
+           "price":18.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":12,
+        "model":"products.product",
+        "fields":{
+           "name":"Andre Goichot Pouilly Fuisse",
+           "country":"France",
+           "region":"Burgundy",
+           "grape_variety":"Chardonnay",
+           "year":2020,
+           "description":"Maison André Goichot, founded in 1947, has always been reknown for their selection of Burgundy wines. These wines, mainly from Chardonnay and Pinot Noir grapes, show all the characteristics of wines from the Burgundy region.",
+           "price":23.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":13,
+        "model":"products.product",
+        "fields":{
+           "name":"Sancerre La Perriere",
+           "country":"France",
+           "region":"Loire",
+           "grape_variety":"Sauvignon Blanc",
+           "year":2019,
+           "description":"The 43 hectares of La Perrière are heavily dominated by Sauvignon Blanc, planted over roughly 38 hectares, compared to only 5 hectares of Pinot Noir. Only Sauvignon Blanc is permitted for the production of Sancerre Blanc wines, while Pinot Noir can be used for either reds or rosés.",
+           "price":22.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":14,
+        "model":"products.product",
+        "fields":{
+           "name":"Pouilly-Fume Foucher",
+           "country":"France",
+           "region":"Loire",
+           "grape_variety":"Sauvignon Blanc",
+           "year":2019,
+           "description":"Foucher Lebrun has selected for you this Poully-Fumé. With a nice pale yellow fine and subtile aromas floral and mineral with a long lasting and silky final",
+           "price":20.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    },
+    {
+        "pk":15,
+        "model":"products.product",
+        "fields":{
+           "name":"Gavi La Battistina",
+           "country":"Italy",
+           "region":"Piedmont",
+           "grape_variety":"Cortese",
+           "year":2020,
+           "description":"This is a delicious single-estate Gavi from the progressive Vini Araldica wine company. Their boutique 24ha La Battistina estate specialises in Piedmont's signature white grape variety, Cortese. The grapes for this wine come from old vines grown on the rolling chalky hills in the province of Alessandria. The name Cortese translates as 'courteous', as this grape offers a soft and generous flavour profile and structure to a wine. This example has abundant chalky minerality, refreshingly cool apple and pear fruit and an impressively long, silky finish.",
+           "price":16.00,
+           "category":2,
+           "rating":4.6,
+           "image_url":"",
+           "image":""
+       }
+    } 
+]   

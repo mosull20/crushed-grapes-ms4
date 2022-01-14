@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',
+    'products',
 ]
 
 MIDDLEWARE = [
@@ -98,7 +99,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'crushed_grapes.wsgi.application'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-hookworm-rgujwhbg.ws-eu25.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-hookworm-rgujwhbg.ws-eu27.gitpod.io']
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
