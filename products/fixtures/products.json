@@ -12,7 +12,7 @@
           "price":17.00,
           "category":2,
           "rating":4.6,
-          "image_url":"",
+          "image_url":"https://m.tesco.ie/img/c/gw_360/ttl_31d/2url_img.tesco.ie/Groceries/pi/004/8410441332004/IDShot_225x225.jpg",
           "image":"faustino-white.png"
        }
     },
@@ -47,7 +47,7 @@
            "category":2,
            "rating":4.6,
            "image_url":"",
-           "image":""
+           "image":"grapes_vine.jpg"
        }
     },
     {
@@ -64,7 +64,7 @@
            "category":2,
            "rating":4.6,
            "image_url":"",
-           "image":""
+           "image":"grapes_vine.jpg"
        }
     },
     {
@@ -81,7 +81,7 @@
            "category":2,
            "rating":4.6,
            "image_url":"",
-           "image":""
+           "image":"grapes_vine.jpg"
        }
     },
     {
@@ -98,7 +98,7 @@
            "category":2,
            "rating":4.6,
            "image_url":"",
-           "image":""
+           "image":"grapes_vine.jpg"
        }
     },
     {
@@ -115,7 +115,7 @@
            "category":2,
            "rating":4.6,
            "image_url":"",
-           "image":""
+           "image":"grapes_vine.jpg"
        }
     },
     {
