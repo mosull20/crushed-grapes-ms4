@@ -30,6 +30,10 @@ body {
     margin-bottom: 100px;
 }
 
+.card-image {
+    height: 100px;
+}
+
 /*-------- Media Queries ----------- */
 
 @media (min-width: 992px) {
