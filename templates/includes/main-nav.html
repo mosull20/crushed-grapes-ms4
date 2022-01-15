@@ -8,10 +8,10 @@
           Wines
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Red Wines</a>
-          <a class="dropdown-item" href="#">White Wines</a>
-          <a class="dropdown-item" href="#">Rosé Wines</a>
-          <a class="dropdown-item" href="#">Sparkling Wines</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=red_wine">Red Wines</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=white_wine">White Wines</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=rosé_wine">Rosé Wines</a>
+          <a class="dropdown-item" href="{% url 'products' %}?category=sparkling">Sparkling Wines</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="{% url 'products' %}">All Wines</a>
         </div>
