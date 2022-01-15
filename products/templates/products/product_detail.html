@@ -13,38 +13,35 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h1 class="text-center">PRODUCTS</h1>
+                <h1 class="text-center">PRODUCT DETAILS</h1>
             </div>
         </div>
         <hr>
     
     <div class="row">
-        {% for product in products %}
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card mb-3">
+            <div class="col-12">
+                <div class="card product-detail-card">
                     <div class="row no-gutters">
-                   
                         <div class="col-md-4">
                             {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
-                            </a>
+                            <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
                             {% endif %}
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
-                                <h6 class="card-title">{{ product.country }}</h6>
-                                <h6 class="card-title">{{ product.region }}</h6>
-                                <p class="card-text">€{{ product.price }}</p>
+                                <p class="card-title"><strong>Country of Origin: </strong><br>{{ product.country }}</p>
+                                <p class="card-title"><strong>Region: </strong><br>{{ product.region }}</p>
+                                <p class="card-text"><strong>Grape Variety: </strong><br>{{ product.grape_variety }}</p>
+                                <p class="card-text"><strong>Description: </strong><br>{{ product.description }}</p>
+                                <p class="card-text"><strong>Price: </strong><br>€{{ product.price }}</p>
                                 <p class="card-text"><small class="text-muted">Rating: {{ product.rating }}</small></p>
-                                <a href="{% url 'product_detail' product.id %}"><p class="card-text">Details</p></a>
                             </div>
                         </div>
                     </div>
               </div>
             </div>   
-        {% endfor %}
+ 
     </div>
 
 
