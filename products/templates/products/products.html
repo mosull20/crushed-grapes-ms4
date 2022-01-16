@@ -18,36 +18,86 @@
         </div>
         <hr>
     
-    <div class="row">
-        {% for product in products %}
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card mb-3">
-                    <div class="row no-gutters">
-                   
-                        <div class="col-md-4">
-                            {% if product.image %}
-                            <a href="{% url 'product_detail' product.id %}">
-                                <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
-                            </a>
-                            {% endif %}
-                        </div>
-                        <div class="col-md-8">
-                            <div class="card-body">
-                                <h5 class="card-title">{{ product.name }}</h5>
-                                <h6 class="card-title">{{ product.country }}</h6>
-                                <h6 class="card-title">{{ product.region }}</h6>
-                                <p class="card-text">€{{ product.price }}</p>
-                                <p class="card-text"><small class="text-muted">Rating: {{ product.rating }}</small></p>
-                                <a href="{% url 'product_detail' product.id %}"><p class="card-text">Details</p></a>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="input-group mb-3">
+                    <select class="custom-select" id="sort-select-box">
+                    <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort By...</option>
+                    <option value="category_asc" {% if current_sorting == 'category_asc' %}selected{% endif %}>Category (A-Z)</option>
+                    <option value="category_desc" {% if current_sorting == 'category_desc' %}selected{% endif %}>Category (Z-A)</option>
+                    <option value="country_asc" {% if current_sorting == 'country_asc' %}selected{% endif %}>Country (A-Z)</option>
+                    <option value="country_desc" {% if current_sorting == 'country_desc' %}selected{% endif %}>Country (Z-A)</option>
+                    <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low-high)</option>
+                    <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high-low)</option>
+                    <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Most Popular</option>
+                    </select>
+                </div>    
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="products-number-link">
+                    <p>
+                        {% if search_term or current_categories or current_sorting != 'None_None' %}
+                            <span><a href="{% url 'products' %}">Products Home</a> | </span>
+                        {% endif %}
+                        {{ products|length }} Products{% if search_term %} found for <strong>{{ search_term }}</strong>{% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for product in products %}
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
+                    
+                            <div class="col-md-4">
+                                {% if product.image %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ product.name }}</h5>
+                                    <h6 class="card-title">{{ product.country }}</h6>
+                                    <h6 class="card-title">{{ product.region }}</h6>
+                                    <p class="card-text">€{{ product.price }}</p>
+                                    <p class="card-text"><small class="text-muted">Rating: {{ product.rating }}</small></p>
+                                    <a href="{% url 'product_detail' product.id %}"><p class="card-text">Details</p></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-              </div>
-            </div>   
-        {% endfor %}
+                </div>
+                </div>   
+            {% endfor %}
+        </div>
     </div>
+{% endblock %}
 
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+        $('#sort-select-box').change(function() {
+            let selector = $(this);
+            let currentUrl = new URL(window.location);
 
+            let selectedVal = selector.val();
+            if (selectedVal != "reset"){
+                let sort = selectedVal.split("_")[0];
+                let direction = selectedVal.split("_")[1];
 
-    </div>
+                currentUrl.searchParams.set("sort", sort);
+                currentUrl.searchParams.set("direction", direction);
+
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete("sort");
+                currentUrl.searchParams.delete("direction");
+
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}
