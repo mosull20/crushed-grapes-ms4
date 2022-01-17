@@ -1,3 +1,4 @@
+ <!-- Search box -->
  <li class="list-inline-item">
         <a class="d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-expanded="false">
             <div class="text-center">
@@ -20,7 +21,7 @@
             </form>
         </div>
     </li>
-
+<!-- Account dropdown -->
     <li class="list-inline-item dropdown">
         <a class="d-block d-lg-none" href="#" id="account-options-mobile" data-toggle="dropdown" aria-expanded="false">
             <div class="text-center">
@@ -41,9 +42,9 @@
             </div>              
         </a>
     </li>
-       
+    <!-- Shopping Cart -->
     <li class="list-inline-item">
-          <a href="" class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none">
+          <a href="{% url 'view_cart' %}" class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none">
             <div class="text-center">
                 <div><i class="fas fa-shopping-cart"></i></div>
                 <p> 
