@@ -1,5 +1,4 @@
-<div class="toast custom-toast" data-autohide="false">
-    <div class="arrow-up arrow-success"></div>
+<div class="toast custom-toast bg-white" data-autohide="false">
     <div class="toast-capper bg-success w-100"></div>
     <div class="toast-header">
         <strong class="mr-auto">Success!</strong>
@@ -8,6 +7,44 @@
         </button>
     </div>
     <div class="toast-body">
-        {{ message }}
+        
+        <div class="row">
+            <div class="col">
+                {{ message }}
+                <hr>
+            </div>
+        </div>
+
+        {% if grand_total %}
+        <p>Your Cart ({{ product_count }})</p>
+        <div class="cart-notification-wrapper">
+            {% for item in cart_items %}
+            <div class="row">
+                <div class="col-3">
+                    <img class="cart-product-image-preview" src="../media/{{ item.product.image }}" alt="">
+                </div>
+                <div class="col-9">
+                    <p><strong>{{ item.product.name }}</strong></p>
+                    <p>Qty: {{ item.quantity }}</p>
+                </div>
+            </div>
+            <hr>
+            {% endfor %}
+        </div>
+        <div class="row mx-auto w-100">
+            <div class="col">
+                <p> Total: {% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}
+                    <span class="float-right">€{{ total|floatformat:2 }}</span>
+                </p>
+                    {% if free_delivery_delta > 0 %}
+                        <p class="text-center bg-warning py-2">Spend €{{ free_delivery_delta }} more to get free delivery!</p>
+                    {% endif %}  
+                <a href="{% url 'view_cart' %}" class="btn btn-dark w-100">Secure Checkout  
+                    <span class="ml-2"><i class="fas fa-lock"></i></span>
+                </a>  
+            </div>
+        </div>
+        {% endif %}
+
     </div>
 </div>

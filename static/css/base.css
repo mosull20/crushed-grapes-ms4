@@ -56,7 +56,18 @@ body {
 }
 
 .toast-capper {
-    height: 2px;
+    height: 4px;
+}
+
+.cart-notification-wrapper {
+    height: 140px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.cart-product-image-preview {
+    height: 60px;
+    width: auto;
 }
 
 /*-------- Media Queries ----------- */
