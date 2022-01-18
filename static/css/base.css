@@ -39,7 +39,10 @@ body {
     width: auto;
 }
 
-
+.update-qty, 
+.remove-item {
+    cursor: pointer;
+}
 /*-------- Media Queries ----------- */
 
 @media (min-width: 992px) {
