@@ -59,7 +59,7 @@
                             <div class="col-4 text-right">
                                 <p>€{{ total|floatformat:2 }}</p>
                                 <p>€{{ delivery|floatformat:2 }}</p>
-                                <p>€{{ total|floatformat:2 }}</p>   
+                                <p>€{{ grand_total|floatformat:2 }}</p>   
                             </div> 
                         </div>
                     </div>
@@ -84,21 +84,30 @@
                             {{ order_form.county | as_crispy_field }}
                             {{ order_form.postcode | as_crispy_field }}
                             {{ order_form.country | as_crispy_field }}
+                            <div class="save-info-row">
+                                {% if user.is_authenticated%}
+                                    <label for="save-checkbox">Save my delivery information</label>
+                                    <input type="checkbox" id="save-checkbox" name="save-checkbox" checked>
+                                {% else %}
+                                    <p><a href="{% url 'account_signup' %}">Create an account</a> or <a href="{% url 'account_login' %}">login</a> to save your delivery information</p>
+                                {% endif %}
+                            </div>
                     </fieldset>
                     <fieldset>
                         <legend>Payment Details</legend>
                         <!-- Stripe elements -->
                         <div id="card-element"></div>
-                        <div id="card-errors"></div>
+                        <div class="text-danger" id="card-errors"></div>
                     </fieldset>
 
                      <!-- Return to shopping cart button -->
-                     <div class="payment-button">
+                     <div class="payment-button text-right">
                         <a href="{% url 'view_cart' %}" class="btn btn-lg btn-light">Back to Cart   
                             <span class="ml-2"><i class="fas fa-chevron-left"></i></span>
                         </a>
-                        <button class="btn btn-lg btn-dark">
+                        <button class="btn btn-lg btn-dark" id="payment-button">
                             <span>Make Secure Payment</span><i class="fas fa-lock ml-2"></i></button>
+                        <p class="text-danger text-right"><small> <i class="fas fa-exclamation-circle mr-2 mt-2"></i> Your card will be charged €{{ grand_total|floatformat:2 }}</small></p>
                     </div>
                 </form>
             </div>
