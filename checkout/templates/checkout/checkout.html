@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load cart_tools %}
+
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -24,8 +26,84 @@
 
         <div class="row">
             <div class="col-12 col-lg-6">
+                <p>Order Summary ({{ product_count }})</p>
+                 <div class="row mr-2">
+                        <div class="col-8">
+                            <p>Item</p>
+                        </div>
+                        <div class="col-4 text-right">
+                            <p>Subtotal</p>
+                        </div>
+                </div>
+                        {% for item in cart_items %}
+                        <div class="row mr-2">
+                            <div class="col-4">
+                                <small><p><img class="cart-product-image" src="../media/{{ item.product.image }}" alt="" style="height:100px; width:50px;"></p></small>
+                            </div>
+                            <div class="col-4">
+                                <p>{{ item.product.name }}</p>
+                                <p>Qty: {{ item.quantity }}</p>
+                            </div>
+                            <div class="col-4 text-right">
+                                <p>€{{ item.product.price | calculate_subtotal:item.quantity }}</p>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endfor %}    
+                        <div class="row mr-2">
+                            <div class="col-8 text-right">
+                                <p>Order Total:</p>
+                                <p>Delivery:</p>
+                                <p>Grand Total:</p>   
+                            </div>
+                            <div class="col-4 text-right">
+                                <p>€{{ total|floatformat:2 }}</p>
+                                <p>€{{ delivery|floatformat:2 }}</p>
+                                <p>€{{ total|floatformat:2 }}</p>   
+                            </div> 
+                        </div>
+                    </div>
+            
+
+       
+            <div class="col-12 col-lg-6 pl-2">
                 <p>Please fill out the form below to complete your order</p>
+                <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend>Personal Details</legend>
+                            {{ order_form.full_name | as_crispy_field }}
+                            {{ order_form.email | as_crispy_field }}
+                            {{ order_form.phone_number | as_crispy_field }}
+                    </fieldset>
+                    <fieldset>
+                        <legend>Delivery Information</legend>
+                            {{ order_form.street_address1 | as_crispy_field }}
+                            {{ order_form.street_address2 | as_crispy_field }}
+                            {{ order_form.town_or_city | as_crispy_field }}
+                            {{ order_form.county | as_crispy_field }}
+                            {{ order_form.postcode | as_crispy_field }}
+                            {{ order_form.country | as_crispy_field }}
+                    </fieldset>
+                    <fieldset>
+                        <legend>Payment Details</legend>
+                        <!-- Stripe elements -->
+                        <div id="card-element"></div>
+                        <div id="card-errors"></div>
+                    </fieldset>
+
+                     <!-- Return to shopping cart button -->
+                     <div class="payment-button">
+                        <a href="{% url 'view_cart' %}" class="btn btn-lg btn-light">Back to Cart   
+                            <span class="ml-2"><i class="fas fa-chevron-left"></i></span>
+                        </a>
+                        <button class="btn btn-lg btn-dark">
+                            <span>Make Secure Payment</span><i class="fas fa-lock ml-2"></i></button>
+                    </div>
+                </form>
             </div>
         </div>
+        </div>
+
 {% endblock %}
 

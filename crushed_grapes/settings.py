@@ -62,7 +62,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'crushed_grapes.urls'
 
-CRISPY_TEMPLATE_PACK = 'boostrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
