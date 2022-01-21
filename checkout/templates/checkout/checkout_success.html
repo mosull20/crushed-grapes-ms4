@@ -25,16 +25,98 @@
 
         <div class="row">
             <div class="col-12">
-                <p>Thank you! Your order has been confirmed and a confirmation email will be sent to {{ order.email }}</p>
+                <h2>Thank you!</h2>
+                <hr>
+                <p>Your order has been confirmed and a confirmation email will be sent to {{ order.email }}</p>
+                <hr>
             </div>
-            <div class="col-12 ">
+        </div> 
+        <div class="row">
+            <div class="col-12">
+                <h3>Order Details</h3>
+                <p>
+                   <span class="pr-2">Ordered on {{ order.date }}</span>|<span class="pl-2">Order # {{ order.order_number }}</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="border-wrapper border border-secondary rounded w-75">
+            <div class="row px-3 py-2">
+                <div class="col-6">
+                    <p><strong>Delivery Address</strong></p>
+                    <p class="mb-0">{{ order.full_name }}</p>
+                    <p class="mb-0">{{ order.street_address1 }}</p>
+                    {% if order.street_address2 %}
+                    <p class="mb-0">{{ order.street_address2 }}</p>
+                    {% endif %}
+                    <p class="mb-0">{{ order.town_or_city }}</p>
+                    {% if order.county %}
+                    <p class="mb-0">{{ order.county }}</p>
+                    {% endif %}
+                    {% if order.postcode %}
+                    <p class="mb-0">{{ order.postcode }}</p>
+                    {% endif %}
+                    <p class="mb-0">{{ order.country }}</p>
+                    <p>{{ order.phone_number }}</p>
+                </div>
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col text-left">
+                            <p><strong>Billing Summary</strong></p>
+                            <div class="row">
+                                <div class="col 6 text-left">
+                                    <p>Order Total: </p>
+                                </div>
+                                <div class="col 6 text-right">
+                                    <p>{{ order.order_total }}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col 6 text-left">
+                                    <p>Delivery: </p>
+                                </div>
+                                <div class="col 6 text-right">
+                                    <p>{{ order.delivery_cost }} </p>
+                                </div>
+                            </div>  
+                            <div class="row">
+                                <div class="col 6 text-left">
+                                    <p>Grand Total: </p>
+                                </div>
+                                <div class="col 6 text-right">
+                                    <p>{{ order.grand_total }} </p>
+                                </div>
+                            </div>  
+                        </div>                
+                    </div>   
+                </div>
+            </div>
+            <hr>
+            <div class="row px-3 py-2">
+                <div class="col">
+                    <p><strong>Item Details</strong></p>
+                    {% for item in order.lineitems.all %}
+                    <div class="row">
+                        <div class="col-6">
+                            <p>{{ item.product.name }}</p>
+                        </div>
+                        <div class="col-6">
+                            <p>{{ item.quantity }} @ {{ item.product.price }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+           <div class="col-12 ">
                     <!-- Return to shopping cart button -->
-                    <div class="payment-button text-right mt-3">
-                        <a href="{% url 'products' %}" class="btn btn-lg btn-light">Back to shopping  
+                    <div class="payment-button mt-3">
+                        <a href="{% url 'products' %}" class="btn btn-lg btn-dark">Back to shopping  
                             <span class="ml-2"><i class="fas fa-chevron-left"></i></span>
                         </a>
                     </div>
-            </div>
+           </div>
         </div>
     </div>
 
