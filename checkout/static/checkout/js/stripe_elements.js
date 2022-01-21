@@ -54,6 +54,9 @@ form.addEventListener('submit', function(ev) {
   ev.preventDefault();
   card.update({ 'disabled': true});
   $('#payment-button').attr('disabled', true);
+      // Show a spinner - from Stripe docs
+  document.querySelector("#spinner").classList.remove("hidden");
+  
   stripe.confirmCardPayment(clientSecret, {
     payment_method: {
       card: card,
@@ -69,9 +72,10 @@ form.addEventListener('submit', function(ev) {
         $(errorDiv).html(html);
         card.update({ 'disabled': false});
         $('#payment-button').attr('disabled', false);
+        document.querySelector("#spinner").classList.add("hidden");
     } else {
-      if (result.paymentIntent.status === 'succeeded') {
-        form.submit();
+        if (result.paymentIntent.status === 'succeeded') {
+          form.submit();
       }
     }
   });
