@@ -70,11 +70,11 @@ body {
     width: auto;
 }
 
-/* stripe code t try  */
+/* css from stripe  */
 .hidden {
     display: none;
   }
-/* spinner/processing state, errors */
+/* spinner display from Boutique Ado walkthrough*/
 
 #spinner {
     position: fixed;
