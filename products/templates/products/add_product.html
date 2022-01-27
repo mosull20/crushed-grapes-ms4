@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+{% load cart_tools %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">Manage Products</h1>
+                <h2 class = "text-center">Add a Product</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-12 col-lg-6">
+                <form action="{% url 'add_product' %}" method="POST" id="add-product-form" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <hr>
+                    <button class="btn btn-dark" type="submit">Add Product</button>
+                    <a href="{% url 'products' %}" class="btn btn-light">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
