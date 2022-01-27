@@ -1,0 +1,25 @@
+Hello {{ order.full_name }},
+
+Thank you for your order. Your order information is below:
+
+Order Number: {{ order.order_number }}
+Date Order Placed: {{ order.date }}
+
+Items ordered: 
+{% for item in order.lineitems.all %} 
+{{ item.product.name }} x {{ item.quantity }} 
+{% endfor %}
+
+Order Total: €{{ order.order_total }}
+Delivery costs: €{{ order.delivery_cost }}
+Grand Total: €{{ order.grand_total }}
+
+Delivery details: {{ order.street_address1 }}, {{ order.town_or_city }}, {{ order.country }}.
+
+If you have any further questions about this order, please contact us at {{ contact_email }}
+
+We hope to see you again soon!
+
+Regards, 
+Crushed Grapes
+
