@@ -54,7 +54,11 @@
                             <div class="col-md-4">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
-                                    <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
+                                    <img src="{{ product.image.url }}" class="card-img pl-2 pt-1" alt="{{ product.name }}" style="height: 300px; width: auto;">
+                                </a>
+                                {% else %}
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img src="{{ MEDIA_URL }}default-image.webp" class="card-img pl-2 pt-1" alt="{{ product.name }}" style="height: 300px; width: auto;">
                                 </a>
                                 {% endif %}
                             </div>

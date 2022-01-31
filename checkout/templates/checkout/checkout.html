@@ -38,7 +38,12 @@
                         {% for item in cart_items %}
                         <div class="row mr-2">
                             <div class="col-4">
-                                <small><p><img class="cart-product-image" src="../media/{{ item.product.image }}" alt="" style="height:100px; width:50px;"></p></small>
+                                {% if item.product.image %}
+                                    <small><p><img class="cart-product-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}" style="height:100px; width:auto;"></p></small>
+                                {% else %}
+                                    <small><p><img class="cart-product-image" src="{{ MEDIA_URL }}default-image.webp" alt="{{ item.product.name }}" style="height:100px; width:auto;"></p></small>
+                                {% endif %}
+                                
                             </div>
                             <div class="col-4">
                                 <p>{{ item.product.name }}</p>

@@ -25,7 +25,9 @@
                     <div class="row no-gutters">
                         <div class="col-md-4">
                             {% if product.image %}
-                            <img src="{{ product.image.url }}" class="card-img" alt="{{ product.name }}">
+                                <img src="{{ product.image.url }}" class="card-img-detail" alt="{{ product.name }}">
+                            {% else %}                   
+                                <img src="{{ MEDIA_URL }}default-image.webp" class="card-img-detail" alt="{{ product.name }}">
                             {% endif %}
                         </div>
                         <div class="col-md-8">
