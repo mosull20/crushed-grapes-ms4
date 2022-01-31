@@ -11,14 +11,15 @@
 
 {% block content %}
 <div class="container h-100">
-<div class="row h-100">
-    <div class="col-12 my-auto text-center">
-        <h1>Welcome to Crushed Grapes!</h1>
-        <h2>Fine wines online</h2>
-        <a href="{% url 'products' %}" class="btn btn-lg btn-dark">Shop All Wines</a>
-    </div>
-        
-    </div>
-    
+    <div class="row h-100">
+        <div class="col-12 my-auto text-center">
+            <div class="jumbotron jumbo-text">
+                <h1 class="mb-2">Welcome to Crushed Grapes!</h1>
+                <h2 class="mb-2">Fine wines online</h2>
+                <hr>
+                <a href="{% url 'products' %}" class="btn btn-lg btn-dark">Shop All Wines</a>
+            </div>
+        </div>       
+    </div> 
 </div>
 {% endblock %}

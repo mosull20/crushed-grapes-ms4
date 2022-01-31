@@ -10,6 +10,7 @@
 {% endblock %}
 
 {% block content %}
+<div class="overlay"></div>
     <div class="container">
         <!-- Heading -->
         <div class="row">
@@ -23,14 +24,14 @@
             <div class="col-12">
                 <div class="card product-detail-card">
                     <div class="row no-gutters">
-                        <div class="col-md-4">
+                        <div class="col-12 col-md-4 text-center">
                             {% if product.image %}
                                 <img src="{{ product.image.url }}" class="card-img-detail" alt="{{ product.name }}">
                             {% else %}                   
                                 <img src="{{ MEDIA_URL }}default-image.webp" class="card-img-detail" alt="{{ product.name }}">
                             {% endif %}
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-12 col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">{{ product.name }}</h5>
                                 <p class="card-title"><strong>Country of Origin: </strong><br>{{ product.country }}</p>

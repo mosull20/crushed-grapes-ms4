@@ -38,12 +38,13 @@
     <title>Crushed Grapes {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-      <header class="container-fluid fixed-top bg-dark">
+      <header class="container-fluid fixed-top page-top-bar">
         <div id="topnav" class="row pt-3 d-none d-lg-flex">
           <!-- Logo -->
-          <div class="col-12 col-lg-4">
+          <div class="col-12 col-lg-4 logo-container">
             <a href="{% url 'home' %}">
-              <h2 class="logo text-black">Crushed Grapes</h2>
+              <img class="logo-image" src="{{ MEDIA_URL }}kindpng_5684398.png" alt="">
+              <span class="logo-text pl-2">Crushed Grapes</span>
             </a>
           </div>
           <!-- Search Box -->

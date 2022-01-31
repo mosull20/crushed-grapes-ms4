@@ -10,10 +10,14 @@
 {% endblock %}
 
 {% block content %}
+<div class="overlay"></div>
     <div class="container">
         <div class="row">
             <div class="col">
                 <h1 class="text-center">Products</h1>
+                {% for c in current_categories %}
+                    <h2 class="text-center">{{ c.friendly_name}}</h2>
+                {% endfor %}
             </div>
         </div>
         <hr>
@@ -47,11 +51,11 @@
 
         <div class="row">
             {% for product in products %}
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card mb-3">
+                <div class="col-12 col-md-6 col-lg-4 mb-3">
+                    <div class="card mb-3 h-100">
                         <div class="row no-gutters">
                     
-                            <div class="col-md-4">
+                            <div class="col-4">
                                 {% if product.image %}
                                 <a href="{% url 'product_detail' product.id %}">
                                     <img src="{{ product.image.url }}" class="card-img pl-2 pt-1" alt="{{ product.name }}" style="height: 300px; width: auto;">
@@ -62,14 +66,14 @@
                                 </a>
                                 {% endif %}
                             </div>
-                            <div class="col-md-8">
+                            <div class="col-8">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ product.name }}</h5>
                                     <h6 class="card-title">{{ product.country }}</h6>
                                     <h6 class="card-title">{{ product.region }}</h6>
                                     <p class="card-text">€{{ product.price }}</p>
                                     <p class="card-text"><small class="text-muted">Rating: {{ product.rating }}</small></p>
-                                    <a href="{% url 'product_detail' product.id %}"><p class="card-text">Details</p></a>
+                                    <a href="{% url 'product_detail' product.id %}"><p class="card-text">Details <small><i class="fas fa-chevron-right"></i></small></p></a>
 
                                     {% if request.user.is_superuser %}
                                     <hr>
