@@ -80,7 +80,21 @@
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <!-- Customer reviews section -->
+                                        <div class="col-12 mt-3">
+                                            <h5 class="card-title">Customer Reviews</h5>
+                                            {% if reviews %}
+                                                {% for review in reviews %}
+                                                    <p>{{ review.rating }} out of 5</p>
+                                                    <p>{{ review.title }}</p>
+                                                    <p>{{ review.description }}</p>
+                                                    <p>Reviewd by: {{ review.user }}</p>
+                                                    <p>Date reviewed: {{ review.review_date }}</p>
+                                                {% endfor %}
+                                            {% else %}
+                                                <p>This product has not yet been reviewed. Add a review now!</p>
+                                            {% endif %}
+                                        </div>
                                         <div class="col-12 mt-3">
                                             <!-- Continue shopping button -->
                                             <a href="{% url 'products' %}" class="btn btn-lg btn-dark">Continue Shopping   

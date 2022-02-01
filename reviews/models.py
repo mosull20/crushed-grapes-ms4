@@ -19,10 +19,10 @@ class Review(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     rating = models.IntegerField(
-        null=True, blank=True, default=0, choices=rating_options)
-    title = models.CharField(max_length=50)
-    description = models.TextField()
-    review_date = models.DateTimeField(auto_now_add=True)
+        null=True, blank=True, default=1, choices=rating_options)
+    title = models.CharField(max_length=50, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    review_date = models.DateTimeField(null=False, blank=False, auto_now_add=True)
 
     def __str__(self):
         return self.title
