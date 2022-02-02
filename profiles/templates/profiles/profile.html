@@ -85,7 +85,8 @@
         <div class="row">
             <div class="col">
                 {{ product.reviews }}
-                {% for review in reviews %}
+                {% if reviews.count > 0 %}
+                    {% for review in reviews %}
                     <h5>{{ review.product.name }}</h5>
                             <!-- Rating -->
                                 {% if review.rating == 1 %}
@@ -158,10 +159,14 @@
                                 </div>
                                 {% endif %}
                                 <hr>
-                            {% endfor %}
+                        {% endfor %}
+                    {% else %}
+                        <p>You have not yet written any reviews! Browse through the products to add a review to a wine of your choice. </p>
+                    {% endif %}
+                
                    
                
-                <!-- <p>You have not yet written any reviews!</p> -->
+               
                 
             </div>
         </div>

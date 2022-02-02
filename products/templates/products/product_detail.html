@@ -112,6 +112,7 @@
         </div>
 
         <!-- Customer review detail section -->
+        {% if reviews.count > 0 %}
         <div class="row">
             <div class="col-12">
                 <div id="user-review-details">
@@ -197,6 +198,7 @@
                 </div>
             </div>
         </div>
+        {% endif %}
     </div>
 {% endblock %}
 
