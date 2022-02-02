@@ -90,9 +90,11 @@
                                                     <p>{{ review.description }}</p>
                                                     <p>Reviewd by: {{ review.user }}</p>
                                                     <p>Date reviewed: {{ review.review_date }}</p>
+                                                    <hr>
                                                 {% endfor %}
+                                                <p><a href="{% url 'add_review' product.id %}"> Add a new review <small><i class="fas fa-chevron-right"></i></small></a></p>
                                             {% else %}
-                                                <p>This product has not yet been reviewed. Add a review now!</p>
+                                                <p>This product has not yet been reviewed. <a href="{% url 'add_review' product.id %}"> Add a review now <small><i class="fas fa-chevron-right"></i></small></a></p>
                                             {% endif %}
                                         </div>
                                         <div class="col-12 mt-3">

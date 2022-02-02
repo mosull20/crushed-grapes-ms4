@@ -39,6 +39,7 @@ def add_review(request, product_id):
                 form is correctly filled out.')
     else:
         form = ReviewForm()
+        messages.info(request, f'You are adding a review for {product.name}')
 
     template = 'reviews/add_review.html'
     context = {
