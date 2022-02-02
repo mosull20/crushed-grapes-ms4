@@ -88,7 +88,7 @@
                                                     <p>{{ review.rating }} out of 5</p>
                                                     <p>{{ review.title }}</p>
                                                     <p>{{ review.description }}</p>
-                                                    <p>Reviewd by: {{ review.user }}</p>
+                                                    <p>Reviewed by: {{ review.user }}</p>
                                                     <p>Date reviewed: {{ review.review_date }}</p>
                                                     
                                                     {% if request.user.is_superuser or review.user == request.user %}

@@ -73,9 +73,31 @@
                         </tbody>
                     </table>  
               </div>
-
             </div>
-        </div>      
+        </div>   
+        <hr>
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center">My Reviews</h1>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                {{ product.reviews }}
+                    {% for review in reviews %}
+                    <p>{{ review.rating }} out of 5</p>
+                    <p>{{ review.title }}</p>
+                    <p>{{ review.description }}</p>
+                    <p>Reviewed by: {{ review.user }}</p>
+                    <p>Date reviewed: {{ review.review_date }}</p>
+                    {% endfor %}
+               
+                <!-- <p>You have not yet written any reviews!</p> -->
+                
+            </div>
+        </div>
+        
 
 {% endblock %}
 
