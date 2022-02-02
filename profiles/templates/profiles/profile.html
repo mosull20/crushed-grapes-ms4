@@ -78,20 +78,88 @@
         <hr>
         <div class="row">
             <div class="col">
-                <h1 class="text-center">My Reviews</h1>
+                <h1 class="text-center">My Reviews ({{ reviews.count }})</h1>
             </div>
         </div>
         <hr>
         <div class="row">
             <div class="col">
                 {{ product.reviews }}
-                    {% for review in reviews %}
-                    <p>{{ review.rating }} out of 5</p>
-                    <p>{{ review.title }}</p>
-                    <p>{{ review.description }}</p>
-                    <p>Reviewed by: {{ review.user }}</p>
-                    <p>Date reviewed: {{ review.review_date }}</p>
-                    {% endfor %}
+                {% for review in reviews %}
+                    <h5>{{ review.product.name }}</h5>
+                            <!-- Rating -->
+                                {% if review.rating == 1 %}
+                                <span class="review-content star-rating text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i></span><br>
+                                {% elif review.rating == 2 %}
+                                    <span class="review-content star-rating text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i></span><br>
+                                {% elif review.rating == 3 %}
+                                    <span class="review-content star-rating text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                    <i class="far fa-star"></i></span><br>
+                                {% elif review.rating == 4 %}
+                                    <span class="review-content star-rating text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i></span><br>
+                                {% elif review.rating == 5 %}
+                                    <span class="review-content star-rating text-warning">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i></span><br>
+                                {% else %}
+                                        <span class="review content">No Rating added yet</span>
+                                {% endif %}
+                                <p class="pt-3">{{ review.title }}</p>
+                                <p>{{ review.description }}</p>
+                                <p><small class="text-muted">Reviewed by: {{ review.user }}<br>Date reviewed: {{ review.review_date }}</small></p>
+                                
+                                {% if request.user.is_superuser or review.user == request.user %}
+                                <a href="{% url 'edit_review' review.id %}"><span class="pr-3">Edit review </span></a>
+                                <!-- Modal trigger to confirm delete action -->
+                                <a data-toggle="modal" data-target="#delete_review{{review.id}}" href="#" >
+                                    <span> Delete review</span>
+                                </a>
+
+                                <div class="modal fade" id="delete_review{{review.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="delete_review{{review.id}}Label" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                      <div class="modal-content">
+                                        <div class="modal-header">
+                                          <h5 class="modal-title">Are you sure you want to delete this review?</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                          </button>
+                                        </div>
+                                        <div class="modal-body">
+                                          This action cannot be undone!
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button> 
+                                            <a href="{% url 'delete_review' review.id %}" class="btn btn-sm btn-danger">Delete</a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+                                <hr>
+                            {% endfor %}
+                   
                
                 <!-- <p>You have not yet written any reviews!</p> -->
                 
