@@ -89,7 +89,7 @@
                             {{ order_form.postcode | as_crispy_field }}
                             {{ order_form.country | as_crispy_field }}
                             <div class="save-info-row">
-                                {% if user.is_authenticated%}
+                                {% if user.is_authenticated %}
                                     <label for="save-checkbox">Save my delivery information</label>
                                     <input type="checkbox" id="save-checkbox" name="save-checkbox" checked>
                                 {% else %}

@@ -90,6 +90,10 @@
                                                     <p>{{ review.description }}</p>
                                                     <p>Reviewd by: {{ review.user }}</p>
                                                     <p>Date reviewed: {{ review.review_date }}</p>
+                                                    
+                                                    {% if request.user.is_superuser or review.user == request.user %}
+                                                    <a href="{% url 'edit_review' review.id %}"><p>EDIT YOUR REVIEW!!</p></a>
+                                                    {% endif %}
                                                     <hr>
                                                 {% endfor %}
                                                 <p><a href="{% url 'add_review' product.id %}"> Add a new review <small><i class="fas fa-chevron-right"></i></small></a></p>
