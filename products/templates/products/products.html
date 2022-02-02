@@ -72,7 +72,7 @@
                                     <h6 class="card-title">{{ product.country }}</h6>
                                     <h6 class="card-title">{{ product.region }}</h6>
                                     <p class="card-text">€{{ product.price }}</p>
-                                    <p class="card-text"><small class="text-muted">Rating: {{ product.rating }}</small></p>
+                                    <p class="card-text"><small class="text-muted">Crushed Grapes Rating: {{ product.rating }}</small></p>
                                     <a href="{% url 'product_detail' product.id %}"><p class="card-text">Details <small><i class="fas fa-chevron-right"></i></small></p></a>
 
                                     {% if request.user.is_superuser %}
