@@ -52,7 +52,7 @@ def add_review(request, product_id):
 
 @login_required
 def edit_review(request, review_id):
-    """ Edit a review """
+    """ Allow a user to Edit their review """
     if not request.user.is_authenticated:
         messages.error(request, 'Sorry, only registered users can edit their reviews.')
         return redirect(reverse('home'))
@@ -78,3 +78,16 @@ def edit_review(request, review_id):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    """ Allow a user to delete their review  """
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, only registered users can delete their reviews.')
+        return redirect(reverse('home'))
+
+    review = get_object_or_404(Review, pk=review_id)
+    review.delete()
+    messages.success(request, 'Your review has been deleted!')
+    return redirect(reverse('products'))
