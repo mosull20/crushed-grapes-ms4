@@ -36,6 +36,9 @@
                                 <h5 class="card-title">{{ product.name }}</h5>
                                 <p class="card-title"><strong>Country of Origin: </strong><br>{{ product.country }}</p>
                                 <p class="card-title"><strong>Region: </strong><br>{{ product.region }}</p>
+                                {% if product.year %}
+                                <p class="card-title"><strong>Year: </strong><br>{{ product.year }}</p>
+                                {% endif %}
                                 <p class="card-text"><strong>Grape Variety: </strong><br>{{ product.grape_variety }}</p>
                                 <p class="card-text"><strong>Description: </strong><br>{{ product.description }}</p>
                                 <p class="card-text"><strong>Price: </strong><br>€{{ product.price }}</p>
