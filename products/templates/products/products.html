@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="container header-container" id="page-top-heading">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -91,6 +91,14 @@
                 </div>   
             {% endfor %}
         </div>
+        
+    </div>
+
+    <!-- Back to top link -->
+    <div class="btt-button mr-1 text-center">
+        <a href="#page-top-heading" class="btt-link"><strong><i class="fas fa-chevron-up pl-2"></i></strong>
+        <p>Back to top</p>
+        </a>
     </div>
 {% endblock %}
 

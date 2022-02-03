@@ -97,6 +97,13 @@ a {
 .remove-item {
     cursor: pointer;
 }
+
+.btt-button {
+    position:fixed;
+    bottom: 100px;
+    right: 20px;
+}
+
 /* Toasts */
 .message-container {
     position: fixed;
