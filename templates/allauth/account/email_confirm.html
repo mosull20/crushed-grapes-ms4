@@ -26,7 +26,7 @@
 <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
     <p class="text-center mt-3 pt-3">
-        <button type="submit" class=" btn btn-lg btn-dark">{% trans 'Confirm' %}<i class="fas fa-check pl-3"></i></button>
+        <button type="submit" class=" btn btn-lg btn-custom-color">{% trans 'Confirm' %}<i class="fas fa-check pl-3"></i></button>
     </p>
 </form>
 

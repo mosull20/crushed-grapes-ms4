@@ -30,7 +30,7 @@
                 <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="btn btn-dark">Update Information</button>
+                    <button class="btn btn-custom-color">Update Information</button>
                 </form>
             </div>
             <div class="col-12 col-lg-6">
@@ -135,7 +135,7 @@
                                 <a href="{% url 'edit_review' review.id %}"><span class="pr-3">Edit review </span></a>
                                 <!-- Modal trigger to confirm delete action -->
                                 <a data-toggle="modal" data-target="#delete_review{{review.id}}" href="#" >
-                                    <span> Delete review</span>
+                                    <span class="text-danger"> Delete review</span>
                                 </a>
 
                                 <div class="modal fade" id="delete_review{{review.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="delete_review{{review.id}}Label" aria-hidden="true">

@@ -14,10 +14,31 @@ body {
     font-family: 'Oswald', sans-serif;
     color: #373F51;
     background-color: #e4dde4;
+    font-size: 18px;
 }
 
 a {
     color: #373F51;
+}
+
+.btn-custom-color {
+    color:whitesmoke;
+    background-color: #a83859;
+    font-family: 'Oswald', sans-serif;
+}
+
+.btn-custom-color:hover {
+    color:whitesmoke;
+    background-color: #802943;
+    font-family: 'Oswald', sans-serif;
+}
+
+.cart-custom-color {
+    color: #a83859 !important;
+}
+
+a.cart-custom-color:hover {
+    color: #802943 !important;
 }
 
 .overlay {
@@ -31,12 +52,20 @@ a {
 }
 
 .jumbotron {
-    background: rgba(245, 244, 244, 0.3);
-    /* background: linear-gradient(rgba(245, 244, 244, 0.5), rgba(245, 244, 244, 0.5)) */
+    background: rgba(0, 0, 0, 0.3);
+    font-family: 'Shadows Into Light', cursive;
 }
 
+.jumbotron hr {
+    color: whitesmoke !important;
+}
+.jumbotron p {
+    font-size: 24px;
+}
+
+
 .jumbo-text {
-    color: #373F51;
+    color: whitesmoke;
 }
 /* Navbar */
 
@@ -50,6 +79,10 @@ a {
     font-family: 'Shadows Into Light', cursive;
     font-size: 40px;
     color: #373F51;
+}
+
+.logo-link {
+    text-decoration: none !important;
 }
 
 .page-top-bar {

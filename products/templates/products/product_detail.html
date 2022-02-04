@@ -117,11 +117,11 @@
 
                                         <div class="col-12 mt-3">
                                             <!-- Continue shopping button -->
-                                            <a href="{% url 'products' %}" class="btn btn-lg btn-dark">Continue Shopping   
+                                            <a href="{% url 'products' %}" class="btn btn-lg btn-light">Continue Shopping   
                                                 <span class="ml-2"><i class="fas fa-chevron-left"></i></span>
                                             </a>
                                             <!-- Add to cart button -->
-                                            <input type="submit" class="btn btn-lg btn-light" value="Add to Cart">
+                                            <input type="submit" class="btn btn-lg btn-custom-color" value="Add to Cart">
                                         </div>
                                         <!-- Hidden input to return user to current page once product added to cart -->
                                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
