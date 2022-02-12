@@ -57,8 +57,17 @@ View the wireframes [here](docs/ms4-wireframes.pdf)
 
 ## Credits
 ### Content
+
+Blog Post on Food Pairing - content taken from [The Wine Cellar Group](https://www.thewinecellargroup.com/wine-pairing-tips-for-beginners/)
+
+Blog Post on how to choose wine - content taken from [GQ](https://www.gq.com/story/how-to-choose-wine-like-a-pro-in-any-situation)
 ### Code
 ### Media
 #### Images
+
+Image of wine & cheese on Food Pairing blog: Photo by <a href="https://unsplash.com/@sugercoatit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Melissa Walker Horn</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Image on how to choose wine blog post: Photo by <a href="https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">CHUTTERSNAP</a> on <a href="https://unsplash.com/s/photos/bottles-of-wine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
 
 ### Acknowledgements

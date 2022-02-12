@@ -15,3 +15,25 @@ h5 {
     font-family: 'Shadows Into Light', cursive;
     font-size: 35px;
 }
+
+
+
+.blog-page-heading {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 50px;
+}
+
+/* https://stackoverflow.com/questions/62736264/how-to-resize-image-to-fit-in-its-container-with-css */
+.image-container {
+    height: 60vh;
+    overflow: hidden;
+    display: flex;
+  }
+  
+.blog-post-detail-image {
+    max-width: inherit;
+    max-height: inherit;
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+  }
