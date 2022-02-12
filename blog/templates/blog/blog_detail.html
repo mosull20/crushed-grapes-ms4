@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col">
                 <h1 class="text-center blog-page-heading">Grape News</h1>
-                <h5 class="text-center">{{ blog.title }}</h5>
+                <h5 class="text-center blog-sub-heading">{{ blog.title }}</h5>
             </div>
         </div>
 </div>
@@ -42,7 +42,28 @@
                     <hr>
                     <p class="blog-text">
                             <a class="mr-3" href="{% url 'edit_blog' blog.id %}">Edit Blog</a>
+                            <a class="text-danger" data-toggle="modal" data-target="#delete_blog{{blog.id}}" href="#">Delete Blog</a>
                     </p>
+                    <!-- Modal trigger to confirm delete blog post action -->
+                    <div class="modal fade" id="delete_blog{{blog.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="delete_blog{{blog.id}}Label" aria-hidden="true">
+                        <div class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Are you sure you want to delete this blog post?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              This action cannot be undone!
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-sm btn-secondary" data-dismiss="modal">Cancel</button> 
+                                <a href="{% url 'delete_blog' blog.id %}" class="btn btn-sm btn-danger">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
                     {% endif %}
                 </div>
         </div>
