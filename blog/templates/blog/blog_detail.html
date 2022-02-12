@@ -27,15 +27,19 @@
         </div>
 </div>
 <div class="container image-container">
-    <img class="blog-post-detail-image" src="{{ blog.image.url }}" alt="Food & Wine image">
+    {% if blog.image %}
+        <img class="blog-post-detail-image px-3 py-3" src="{{ blog.image.url }}" alt="{{ blog.title }}">
+    {% else %}
+        <img class="blog-post-detail-image px-3 py-3" src="{{ MEDIA_URL }}default-no-blog-image.webp"  alt="{{ blog.title }}">
+    {% endif %}
 </div>
         <!-- Blog Details row -->
 
 <div class="container post-text-container">
     <div class="row">   
-        <div class="blog-post-container mt-3 mb-3">  
+        <!-- <div class="blog-post-container mt-3 mb-3">   -->
                 <div class="col-12">  
-                    <p class="blog-text">{{ blog.body }}</p>
+                    <p class="blog-text px-3 py-3 text-justify">{{ blog.body }}</p>
                     <p><small class="text-muted">Added on: {{ blog.date_added }} </small></p> 
                     <p><a href="{% url 'blog' %}"><p class="card-text"><small><i class="fas fa-chevron-left"></i></small> Return to Blog Main Page</p></a></p>
                     {% if request.user.is_superuser %}
@@ -66,7 +70,7 @@
                     </div>
                     {% endif %}
                 </div>
-        </div>
+        <!-- </div> -->
     </div> 
 </div>
 

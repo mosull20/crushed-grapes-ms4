@@ -68,6 +68,8 @@ Blog Post on how to choose wine - content taken from [GQ](https://www.gq.com/sto
 Image of wine & cheese on Food Pairing blog: Photo by <a href="https://unsplash.com/@sugercoatit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Melissa Walker Horn</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Image on how to choose wine blog post: Photo by <a href="https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">CHUTTERSNAP</a> on <a href="https://unsplash.com/s/photos/bottles-of-wine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Default image for blog posts if none uploaded: Photo by <a href="https://unsplash.com/@apolophotographer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Apolo Photographer</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
 
 ### Acknowledgements

@@ -1,5 +1,6 @@
 .blog-page-heading {
-    font-size: 40px;
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 50px;
 }
 
 .blog-post-image {
@@ -7,20 +8,13 @@
     height: auto; 
 }
 
-.blog-post-container {
+.post-text-container {
     background-color: #e4dde4;
 }
 
 .blog-sub-heading {
     font-family: 'Shadows Into Light', cursive;
     font-size: 35px;
-}
-
-
-
-.blog-page-heading {
-    font-family: 'Shadows Into Light', cursive;
-    font-size: 50px;
 }
 
 /* https://stackoverflow.com/questions/62736264/how-to-resize-image-to-fit-in-its-container-with-css */
