@@ -38,7 +38,12 @@
                     <p class="blog-text">{{ blog.body }}</p>
                     <p><small class="text-muted">Added on: {{ blog.date_added }} </small></p> 
                     <p><a href="{% url 'blog' %}"><p class="card-text"><small><i class="fas fa-chevron-left"></i></small> Return to Blog Main Page</p></a></p>
-                    
+                    {% if request.user.is_superuser %}
+                    <hr>
+                    <p class="blog-text">
+                            <a class="mr-3" href="{% url 'edit_blog' blog.id %}">Edit Blog</a>
+                    </p>
+                    {% endif %}
                 </div>
         </div>
     </div> 

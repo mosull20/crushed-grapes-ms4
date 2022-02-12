@@ -1,7 +1,7 @@
 {% if widget.is_initial %}
    <p>{{ widget.initial_text }}: </p>
     <a href="{{ widget.value.url }}">
-       <img width="40" height="160" src="{{ widget.value.url }}"> {{ widget.value }}</a>
+       <img width="120" height="85" src="{{ widget.value.url }}"> {{ widget.value }}</a>
     {% if not widget.required %}
         <div class="custom-control custom-checkbox mt-2">
             <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}"{% if widget.attrs.disabled %} disabled{% endif %}>
