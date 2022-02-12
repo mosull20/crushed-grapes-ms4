@@ -19,13 +19,34 @@
         <div class="col-12 my-auto text-center">
             <div class="jumbotron jumbo-text">
                 <h1 class="mb-2 jumbo-text blog-page-heading">Welcome to Grape News! The monthly blog about all things wine. </h1>
-                <hr>
-
-
-            
-                
+                <hr>     
             </div>
         </div>       
     </div> 
+
+    {% for blog in blogs %}
+     <div class="card blog-post-container mt-3 mb-3">
+            <div class="row">
+                <div class="col-12 col-md-4">
+                    <img class="blog-post-image px-3 py-3" src="{{ blog.image }}" alt="Food & Wine image">
+                </div>
+                <div class="col-12 col-md-8">  
+                    <div class="card-body">
+                        <h5 class="card-title">{{ blog.title }}</h5>
+                        <hr> 
+                        <p class="card-text">{{ blog.body }}</p>
+                        <a href=""><p class="card-text">Read More <small><i class="fas fa-chevron-right"></i></small></p></a>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">Added on: {{ blog.date_added }} </small>
+                    </div>
+                </div> 
+            </div>        
+    </div>
+
+    {% endfor %}
+
+
+
 </div>
 {% endblock %}

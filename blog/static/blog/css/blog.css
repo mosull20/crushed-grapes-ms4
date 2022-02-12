@@ -1,3 +1,17 @@
 .blog-page-heading {
-    font-size: 70px;
+    font-size: 40px;
+}
+
+.blog-post-image {
+    width: 90%;
+    height: auto; 
+}
+
+.blog-post-container {
+    background-color: #e4dde4;
+}
+
+h5 {
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 35px;
 }
