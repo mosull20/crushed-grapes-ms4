@@ -46,8 +46,8 @@
                                 {% if request.user.is_superuser %}
                                 <hr>
                                 <p class="card-text">
-                                        <a class="mr-3" href="{% url 'edit_product' product.id %}">Edit</a>
-                                        <a class="text-danger" data-toggle="modal" data-target="#delete_product{{product.id}}" href="#">Delete</a>
+                                        <a class="mr-3" href="{% url 'edit_product' product.id %}">Edit Product</a>
+                                        <a class="text-danger" data-toggle="modal" data-target="#delete_product{{product.id}}" href="#">Delete Product</a>
                                 </p>
                                   <!-- Modal trigger to confirm delete product action -->
                                 <div class="modal fade" id="delete_product{{product.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="delete_product{{product.id}}Label" aria-hidden="true">
@@ -191,7 +191,7 @@
                                 <a href="{% url 'edit_review' review.id %}"><span class="pr-3">Edit review </span></a>
                                 <!-- Modal trigger to confirm delete review action -->
                                 <a data-toggle="modal" data-target="#delete_review{{review.id}}" href="#" >
-                                    <span> Delete review</span>
+                                    <span class="text-danger"> Delete review</span>
                                 </a>
 
                                 <div class="modal fade" id="delete_review{{review.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="delete_review{{review.id}}Label" aria-hidden="true">

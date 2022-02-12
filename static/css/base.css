@@ -21,6 +21,10 @@ a {
     color: #373F51;
 }
 
+a:hover {
+    color: #a83859;
+}
+
 .btn-custom-color {
     color:whitesmoke;
     background-color: #a83859;
@@ -103,6 +107,10 @@ a.cart-custom-color:hover {
     padding-left: 10px;
     padding-right: 10px;
     font-size: 20px;
+}
+
+.social-links a:hover {
+    color: #a83859;
 }
 
 /* Images */
@@ -228,6 +236,12 @@ a.cart-custom-color:hover {
     }
     footer {
         padding-top: 90px;
+    }
+}
+
+@media (max-width: 991px) {
+    .profile-orders {
+        margin-top: 25px;
     }
 }
 
