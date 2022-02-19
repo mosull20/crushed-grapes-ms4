@@ -116,7 +116,7 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'crushed_grapes.wsgi.application'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-hookworm-rgujwhbg.ws-eu31.gitpod.io']
+CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-hookworm-rgujwhbg.ws-eu33.gitpod.io']
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
