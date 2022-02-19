@@ -1,0 +1,1 @@
+web: gunicorn crushed_grapes.wsgi:application
