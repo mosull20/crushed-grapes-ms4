@@ -223,6 +223,12 @@ a.cart-custom-color:hover {
 
 /*-------- Media Queries ----------- */
 
+@media (max-width: 575px) {
+    .jumbotron {
+        margin-top: 15%;
+    }
+}
+
 @media (min-width: 576px) {
     .header-container {
         padding-top: 10%;
