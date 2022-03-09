@@ -1,5 +1,7 @@
 # Crushed Grapes
 
+![Website mockup screenshot](media/all-devices-black.png)
+
 View the live website [here](https://crushed-grapes.herokuapp.com/).
 ---
 Crushed Grapes is an online wine store created for educational purposes only for the Code Institute Final Milestone Project. Users can browse through the selection of wines available, sort results and search the site for a particular item, select products to purchase, add them to their cart and finally use a secure checkout facilty to make their purchase, and receive email confirmation of their order. Registered users can further choose to add reviews to any products. Store Admin can add, edit and delete products from the database, and also add, edit or remove blog posts to/from the site. 
