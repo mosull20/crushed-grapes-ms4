@@ -52,24 +52,39 @@ While this site has been created for eductional purposes only, the aim has been 
 2. encourage users to visit the site even if not planning a purchase
 3. have all users confirm they are of legal age to drink alcohol (over 18) before making an order
 
+[Back to Contents](#contents)
+___
+
 ### Wireframes
 View the wireframes [here](docs/ms4-wireframes.pdf)
 
+[Back to Contents](#contents)
+___
+
 ### Design
-#### Overall Design
+#### Overall Design, Images and Color Scheme
+* The aim with the design of this project is to provide the user with a clear, easy to navigate, visually appealing website. I choose the overall colour scheme to tie in with shades of wine - blush and red in particular and ended up going with less vivid colors to create a sense of a calm and a relaxing shopping experience, while also ensuring the colour scheme keeps focusing on showcasing the products.
 
+* I used Bootstrap for much of the site layout and it's components, modals, navbar, footer, and card layout for the products. I feel it gives the user a well structured, well laid out design that provides a good user experience. 
 
+* The main background image on the home page gives a nice simple introduction to the website, without taking centre stage. 
 
-#### Images
-#### Color Scheme
 #### Typography
-#### Note about Wireframes
+* I choose the Oswald font for the bulk of the website typography to provide a sense of sophistciation, with the Shadows into Light font for the logo and home page content and blog page content to create contrast using a more whimsical style.
 
+[Back to Contents](#contents)
+___
 ## Database
+
+[Back to Contents](#contents)
+___
 
 ## Features
 ### Existing Features
 ### Features to implement in the future
+
+[Back to Contents](#contents)
+___
 
 ## Technologies Used
 #### Languages
