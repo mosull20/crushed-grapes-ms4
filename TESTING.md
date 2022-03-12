@@ -21,7 +21,9 @@ ___
 
 1. **HTML validated on [W3C Markup Validation Service](https://validator.w3.org/)**
 Checked using the 'Validate By URI'.
-* All pages were checked 
+* Blog app, Cart app, Home app, Products app, Profiles app, Reviews app pages and base.html were checked - only errors due to use of django template logic 
+* Checkout app pages - warning 'p' element not allowed as child of 'small' - fixed this warning
+
 
 2. **CSS validated on [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)**
 Checked using the 'Validate by Direct Input' method.

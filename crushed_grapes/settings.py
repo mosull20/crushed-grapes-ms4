@@ -117,14 +117,15 @@ LOGIN_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'crushed_grapes.wsgi.application'
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-moccasin-hookworm-rgujwhbg.ws-eu34.gitpod.io']
+CSRF_TRUSTED_ORIGINS = [
+    'https://8000-moccasin-hookworm-rgujwhbg.ws-eu34.gitpod.io']
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 else:
     DATABASES = {
@@ -210,7 +211,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'crushedgrapes@crushedgrapes.com'
-else: 
+else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587

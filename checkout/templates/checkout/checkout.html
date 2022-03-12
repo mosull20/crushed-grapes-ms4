@@ -40,9 +40,9 @@
                         <div class="row mr-2">
                             <div class="col-4">
                                 {% if item.product.image %}
-                                    <small><p><img class="cart-product-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}" style="height:100px; width:auto;"></p></small>
+                                <p><small><img class="cart-product-image" src="{{ item.product.image.url }}" alt="{{ item.product.name }}" style="height:100px; width:auto;"></small></p>
                                 {% else %}
-                                    <small><p><img class="cart-product-image" src="{{ MEDIA_URL }}default-image.webp" alt="{{ item.product.name }}" style="height:100px; width:auto;"></p></small>
+                                    <p><small><img class="cart-product-image" src="{{ MEDIA_URL }}default-image.webp" alt="{{ item.product.name }}" style="height:100px; width:auto;"></small></p>
                                 {% endif %}
                                 
                             </div>

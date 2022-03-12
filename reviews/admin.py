@@ -15,4 +15,5 @@ class ReviewAdmin(admin.ModelAdmin):
     )
     ordering = ('product',)
 
+
 admin.site.register(Review, ReviewAdmin)
