@@ -81,7 +81,60 @@ ___
 
 ## Features
 ### Existing Features
+
+* Across the site:
+    + Navigation bar with logo (linked back to home page), links to home page, wines (subdivided into categories or all wines), FAQ's/Delivery info page, Blog posts page. 
+    + Search bar at top of nav bar
+    + Account link to create and account, login or if logged in - links to my profile page, and logout. As an admin, additional options are shown here to manage products and manage blog
+    + Shopping cart link
+    + Footer containing links to social media sites and link to Delivery Info/FAq's page
+
+* Home page 
+    + Short intro to the site with a button to shop all wines
+
+* Products & Product Detail pages
+    + Page showing range of products, can display all products or each category by itself. Products are displayed in Bootstrap card format and contain an overview, with the option for user to click a link for more details. This then displays full product information with links to add item to cart, choose quantity or continue shopping. If there are any reviews for that wine, these are also displayed on this page underneath the main card display.
+
+* Blog Page
+    + Page showing short description of any blog posts that are available to look at. Clicking on the read post link will open that particular blog post in a new page. 
+
+* Profile/Account page
+    + Logged in users can access their profile page here with any personal/delivery details that have been used before and saved, any previous orders will be shown in summary form here and clicking on the order number will show the full details from the order confirmation for that order. Also shown here is any reviews the user may have uploaded and allow them to edit or delete them from here. 
+
+* Shopping cart page
+    + Displays all items with price, image, product info details and subtotal, delivery costs etc and a link to secure checkout. 
+    + Users can amend quantity or remove any products they do not want to include in their order from here.
+
+* Checkout page
+    + User can enter all their details here - delivery details and payment details with the option to save these for future checkouts. 
+    + User can complete a purchase without needing to be a registered user
+    + User will be updated that payment is processing and will recieve a success message displayed on top right as well as being redirected to a checkout success page which shows a confirmation of their order, details entered etc. and lets the user know a confirmation email will be sent to the email address the user provided.
+
+* Register/Create Account page
+    + Allows user to create a new account for this site with email verification for enhance security. 
+
+* Sign In page
+    + Allows already registered user to log in to their account
+
+* Add review page   
+    + Allows registered users to add a review to any wine using a simple form. If not logged in, it will redirect user to sign in page.
+
+* Admin additional features
+    + Admin can add, edit or delete products and manage the store effectively and easily.
+    + Admin can add, edit or delete a blog post
+    + Admin can add, edit or delete a review, including those uploaded by any registered user 
+    
 ### Features to implement in the future
+
+There are a number of features that I would like to implement in the future to enhance the website both for the site owner and the user experience. 
+* A special offers section for wines that are on sale and have a monthly offers section such as buy 6 bottles for the price of 5 etc. or free glasses with a purchase over a certain amount etc. Having a new offer on a monthly basis would enhance user experience and encourage repeat visits to the site and create more business on the site.
+* Age Verification - an important feature for the site owner to have would be to add an age verification check to have the user confirm they are over 18 which is the legal age to purchase alcohol in Ireland
+* Add the ability for registered users to upload blog posts they have written to feature on the site. Currently, only the admin can upload a new blog post. This would add to the user experience and have them more engaged with the content on the site. 
+* I would also like to add the ability for registered users to leave comments on any blog post.
+* Outside the time contraints of the course, I would also like to implement custom error pages. 
+* Further security features would be important to ensure the integrity of the site in a real world application.
+
+
 
 [Back to Contents](#contents)
 ___
@@ -141,14 +194,25 @@ Blog Post on Food Pairing - content taken from [The Wine Cellar Group](https://w
 Blog Post on how to choose wine - content taken from [GQ](https://www.gq.com/story/how-to-choose-wine-like-a-pro-in-any-situation)
 
 ### Code
+
+Much of the code used for this was based around the Code Institute Boutique Ado walkthrough project, I relied heavily on this for the basic structure of the site. I have adapted it where possible or where needed for my own vision for this site along with adding custom models for reviews and blog page. 
+
+Any small snippets used have been credited within the code where used. 
+
 ### Media
 #### Images
 
 Product images as credited above.
 
+Image of wine bottle and glass used for logo: 
+
+Imge used on home page background: Photo by <a href="https://unsplash.com/@kymellis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kym Ellis</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
 Image of wine & cheese on Food Pairing blog: Photo by <a href="https://unsplash.com/@sugercoatit?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Melissa Walker Horn</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Image on how to choose wine blog post: Photo by <a href="https://unsplash.com/@chuttersnap?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">CHUTTERSNAP</a> on <a href="https://unsplash.com/s/photos/bottles-of-wine?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+Image on Blog Test 4 blog post: Photo by <a href="https://unsplash.com/@kelsoknight?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kelsey Knight</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 Default image for blog posts if none uploaded: Photo by <a href="https://unsplash.com/@apolophotographer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Apolo Photographer</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
   
