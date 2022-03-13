@@ -18,7 +18,7 @@ def blog(request):
 
 
 def blog_detail(request, blog_id):
-    """ 
+    """
     View to show individual blog posts
     """
     blog = get_object_or_404(Blog, pk=blog_id)

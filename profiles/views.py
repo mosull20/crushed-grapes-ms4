@@ -20,7 +20,8 @@ def profile(request):
             form.save()
             messages.success(request, 'Profile updated successfully')
         else:
-            messages.error(request, 'Update failed. Please ensure form is correctly filled out.')
+            messages.error(request, 'Update failed. Please ensure form \
+            is correctly filled out.')
     else:
         form = UserProfileForm(instance=profile)
     orders = profile.orders.all()

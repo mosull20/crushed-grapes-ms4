@@ -30,6 +30,7 @@ Checked using the 'Validate by Direct Input' method.
 * Blog.css, checkout.css, profile.css, base.css - all passed with no errors
 
 3. **JavaScript validated on [JSHint](https://jshint.com/)**
+* All js files and snippets of code within html files were tested using JSHint. Minor errors (missing semicolons) showed up on a couple of files. No other errors were found.
 
 4. **Python valdiated on [PEP8 online](http://pep8online.com/)**
 

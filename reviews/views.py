@@ -54,7 +54,8 @@ def add_review(request, product_id):
 def edit_review(request, review_id):
     """ Allow a user to Edit their review """
     if not request.user.is_authenticated:
-        messages.error(request, 'Sorry, only registered users can edit their reviews.')
+        messages.error(request, 'Sorry, only registered users can edit \
+        their reviews.')
         return redirect(reverse('home'))
 
     review = get_object_or_404(Review, pk=review_id)
@@ -63,12 +64,15 @@ def edit_review(request, review_id):
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated review!')
-            return redirect(reverse('product_detail', args=[review.product.id]))
+            return redirect(reverse(
+                'product_detail', args=[review.product.id]))
         else:
-            messages.error(request, 'Failed to update theis review. Please ensure form is correctly filled out.')
+            messages.error(request, 'Failed to update theis review. \
+            Please ensure form is correctly filled out.')
     else:
         form = ReviewForm(instance=review)
-        messages.info(request, f'You are editing your review for {review.product.name}')
+        messages.info(request, f'You are editing your review \
+        for {review.product.name}')
 
     template = 'reviews/edit_review.html'
     context = {
@@ -84,7 +88,8 @@ def edit_review(request, review_id):
 def delete_review(request, review_id):
     """ Allow a user to delete their review  """
     if not request.user.is_authenticated:
-        messages.error(request, 'Sorry, only registered users can delete their reviews.')
+        messages.error(request, 'Sorry, only registered users can delete \
+        their reviews.')
         return redirect(reverse('home'))
 
     review = get_object_or_404(Review, pk=review_id)

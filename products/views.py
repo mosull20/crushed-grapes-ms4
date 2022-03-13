@@ -46,7 +46,10 @@ def all_products(request):
                 messages.error(request, "You didn't enter any search criteria")
                 return redirect(reverse('products'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(country__icontains=query) | Q(grape_variety__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                description__icontains=query) | Q(
+                    country__icontains=query) | Q(
+                        grape_variety__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -61,7 +64,7 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ 
+    """
     View to show individual product details &
     show any reviews associated with that
     """
@@ -82,7 +85,8 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners have access to this page.')
+        messages.error(request, 'Sorry, only store owners have access \
+        to this page.')
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -92,7 +96,8 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure form is correctly filled out.')
+            messages.error(request, 'Failed to add product. Please ensure \
+            form is correctly filled out.')
     else:
         form = ProductForm()
 
@@ -109,7 +114,8 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners have access to this page.')
+        messages.error(request, 'Sorry, only store owners have access to \
+        this page.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
@@ -120,7 +126,8 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure form is correctly filled out.')
+            messages.error(request, 'Failed to update product. Please \
+            ensure form is correctly filled out.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -138,7 +145,8 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners have access to this page.')
+        messages.error(request, 'Sorry, only store owners have access to \
+        this page.')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Product, pk=product_id)
