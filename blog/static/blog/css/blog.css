@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .blog-page-heading {
     font-family: 'Shadows Into Light', cursive;
     font-size: 50px;
@@ -21,6 +28,8 @@
 .image-container {
     height: 60vh;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
   }
   
@@ -29,5 +38,6 @@
     max-height: inherit;
     height: inherit;
     width: inherit;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
   }

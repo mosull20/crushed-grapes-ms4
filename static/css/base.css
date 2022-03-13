@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&family=Reem+Kufi:wght@400;500;600;700&display=swap&family=Shadows+Into+Light&display=swap&family=Oswald:wght@300;400;500;600;700&display=swap');
 
 
@@ -170,6 +177,18 @@ a.cart-custom-color:hover {
 .cart-product-image-preview {
     height: 60px;
     width: auto;
+}
+.form-group input::-webkit-input-placeholder {
+    color: #aab7c4;
+}
+.form-group input::-moz-placeholder {
+    color: #aab7c4;
+}
+.form-group input:-ms-input-placeholder {
+    color: #aab7c4;
+}
+.form-group input::-ms-input-placeholder {
+    color: #aab7c4;
 }
 .form-group input::placeholder {
     color: #aab7c4;

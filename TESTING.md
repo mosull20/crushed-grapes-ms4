@@ -27,6 +27,7 @@ Checked using the 'Validate By URI'.
 
 2. **CSS validated on [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_input)**
 Checked using the 'Validate by Direct Input' method.
+* Blog.css, checkout.css, profile.css, base.css - all passed with no errors
 
 3. **JavaScript validated on [JSHint](https://jshint.com/)**
 
