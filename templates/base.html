@@ -54,7 +54,7 @@
               <div class="input-group w-100">
                 <input type="text" class="form-control" name="q" placeholder="Search the site">
                 <div class="input-group-append">
-                  <button type="submit" class="form-control btn btn-black">
+                  <button type="submit" class="form-control btn btn-black" title="search-site-button">
                   <span class="icon"><i class="fas fa-search"></i></span>
                 </button>
                 </div>
@@ -65,7 +65,7 @@
           <div class="col-12 col-lg-4">
             <ul class="list-inline list-unstyled text-center text-lg-right">
               <li class="list-inline-item dropdown">
-                <a href="#" id="account-options" data-toggle="dropdown" aria-expanded="false">
+                <a href="#" id="account-options" aria-label="account-menu" data-toggle="dropdown" aria-expanded="false">
                     <div class="text-center">
                         <div><i class="fas fa-user fa-lg"></i></div>
                         <p>Account</p>
@@ -74,14 +74,14 @@
                     <div class="dropdown-menu" aria-labelledby="account-options">
                       {% if request.user.is_authenticated %}
                           {% if request.user.is_superuser %}
-                            <a class="dropdown-item" href="{% url 'add_product' %}">Manage Products</a>
-                            <a class="dropdown-item" href="{% url 'add_blog' %}">Manage Blog</a>
+                            <a class="dropdown-item" href="{% url 'add_product' %}" aria-label="manage-products">Manage Products</a>
+                            <a class="dropdown-item" href="{% url 'add_blog' %}" aria-label="manage-blog">Manage Blog</a>
                           {% endif %}
-                          <a class="dropdown-item" href="{% url 'profile' %}">My Account</a>
-                          <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                          <a class="dropdown-item" href="{% url 'profile' %}" aria-label="my-account">My Account</a>
+                          <a class="dropdown-item" href="{% url 'account_logout' %}" aria-label="logout">Logout</a>
                       {% else %} 
-                          <a class="dropdown-item" href="{% url 'account_signup' %}">Create Account</a>
-                          <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                          <a class="dropdown-item" href="{% url 'account_signup' %}" aria-label="create-account">Create Account</a>
+                          <a class="dropdown-item" href="{% url 'account_login' %}" aria-label="login">Login</a>
                       {% endif %}    
                   </div>
                   </div>              
@@ -152,9 +152,9 @@
               </div>
               <div class="col-12 col-md-4 d-flex justify-content-center">
                   <div class="social-links">
-                        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/" name="Facebook link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/" name="Twitter link" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/" name="Instagram link" target="_blank"><i class="fab fa-instagram"></i></a>
                   </div>
               </div>
               

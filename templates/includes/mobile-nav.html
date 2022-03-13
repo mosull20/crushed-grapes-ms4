@@ -13,7 +13,7 @@
                 <div class="input-group w-100">
                 <input type="text" class="form-control" name="q" placeholder="Search the site">
                 <div class="input-group-append">
-                    <button type="submit" class="form-control btn btn-black">
+                    <button type="submit" class="form-control btn btn-black" title="search-site-button" >
                     <span class="icon"><i class="fas fa-search"></i></span>
                 </button>
                 </div>
@@ -23,7 +23,7 @@
     </li>
 <!-- Account dropdown -->
     <li class="list-inline-item dropdown">
-        <a class="d-block d-lg-none" href="#" id="account-options-mobile" data-toggle="dropdown" aria-expanded="false">
+        <a class="d-block d-lg-none" href="#" id="account-options-mobile" aria-label="account-menu" data-toggle="dropdown" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
                 <p>Account</p>
@@ -31,13 +31,14 @@
             <div class="dropdown-menu" aria-labelledby="account-options-mobile">
               {% if request.user.is_authenticated %}
                   {% if request.user.is_superuser %}
-                    <a class="dropdown-item" href="{% url 'add_product' %}">Manage Products</a>
+                    <a class="dropdown-item" href="{% url 'add_product' %}" aria-label="manage-products">Manage Products</a>
+                    <a class="dropdown-item" href="{% url 'add_blog' %}" aria-label="manage-blog">Manage Blog</a>
                   {% endif %}
-                  <a class="dropdown-item" href="{% url 'profile' %}">My Account</a>
-                  <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                  <a class="dropdown-item" href="{% url 'profile' %}"  aria-label="my-account">My Account</a>
+                  <a class="dropdown-item" href="{% url 'account_logout' %}" aria-label="logout">Logout</a>
               {% else %} 
-                  <a class="dropdown-item" href="{% url 'account_signup' %}">Create Account</a>
-                  <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+                  <a class="dropdown-item" href="{% url 'account_signup' %}" aria-label="create-account">Create Account</a>
+                  <a class="dropdown-item" href="{% url 'account_login' %}" aria-label="login">Login</a>
               {% endif %}    
             </div>              
         </a>

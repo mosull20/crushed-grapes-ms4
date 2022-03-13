@@ -33,7 +33,7 @@ Checked using the 'Validate by Direct Input' method.
 * All js files and snippets of code within html files were tested using JSHint. Minor errors (missing semicolons) showed up on a couple of files. No other errors were found.
 
 4. **Python valdiated on [PEP8 online](http://pep8online.com/)**
-
+* Adjustments made where possible after running code through pep8 online & also using the `python3 -m flake 8` command in the terminal - most errors were line too long or trailing whitespaces. Some such errors were evident in base code set by Django so I did not change this. 
 
 
 [Back to Contents](#contents)
