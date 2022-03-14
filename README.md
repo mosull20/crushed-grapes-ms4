@@ -76,6 +76,9 @@ ___
 ___
 ## Database
 
+Two relational databases were used in the creation of this project - during development SQLite was used and then Postgres was used for the deployed Heroku version. 
+
+
 [Back to Contents](#contents)
 ___
 
