@@ -180,6 +180,66 @@ Testing is detailed in a seperate document [here](TESTING.md).
 ___
 ## Deployment
 
+This project was developed using the Gitpod IDE and pushed to a Github repository with the use of Git version control. The project was then deployed using Heroku.
+
+### To Clone or Fork this project
+
+To clone or fork this project you will need a [Github](https://github.com/) account.
+
+To Fork this project:
+
+1. Open the [Project repository homepage](https://github.com/mosull20/crushed-grapes-ms4).
+2. At the top right of the repository page, above the settings button, click on the **Fork** button.
+3. This will create a copy of this project in your own GitHub account.
+
+To Clone this project:
+1. Open the [Project repository homepage](https://github.com/mosull20/crushed-grapes-ms4).
+2. Click on the **Code** button at the top right of the file list.
+3. Under **Clone** with the HTTPS option selected, copy the url link.
+4. In your local IDE, open the terminal.
+5. Change the current working directory to the location where you want the cloned directory.
+6. Type in `git clone` and then paste the url you copied in step 3.
+7. Press enter and your local clone will be created.
+
+### To deploy to Heroku, the following steps were taken:
+
+1. In advance of deployment, Heroku needs the requirements for the project. In Gitpod, create a requirements.txt file using the `pip3 freeze --local > requirements.txt`. Then a Procfile needs to be created with the follwing code and no balnk like follwing it `web: gunicorn crushed_grapes.wsgi:application`. Push these files to your Github Repo.
+
+2. Go to the [Heroku Website](https://id.heroku.com/login) and log in.
+
+3. In the dashboard, select "Create New App".
+
+4. Choose a unique app name and select the region appropriate to your location and click on 'Create App'.
+
+5. When the app has been created, click on the "Resources" tab to provision a new Postgres database, using the free plan.
+
+6. To use Postgres, return to your IDE and install `dj_database_url` and `psycopg2-binary` using the `pip3 install` command, making sure to add these to your requirements.txt file.
+
+7. In `settings.py` comment out the default database setting and add the following code - 
+`DATABASES = {'default' = dj_database_url.parse('database url')` - the database url can be found by going to the Heroku dashboard under the Settings tab, click on 'Reveal Config Vars', and copy the value next to 'DATABASE_URL'
+
+8. Next, migrations need to be run again as we are now connecting to Postgres so run migrations using the `python3 manage.py migrate` command in the terminal.
+
+9. To import all product data using fixtures we can load the categories data first, followed by the products data using the command `python3 manage.py loaddata categories` and `python3 manage.py loaddata products`.
+
+10. Next, create a superuser for login with Heroku using `python3 manage.py createsuperuser`.
+
+11. Before commiting to GitHub, the Database settings need to be changed in `settings.py` so that when the app is running on Heroku, it will connect to the Postgres database, otherwise, it will connect to the default SQLite DB, and ensuring the database url entered above in step 7 is removed and replaced with `parse(os.environ.get('DATABASE_URL'))`
+
+12. Add the host name of the Heroku app into "Allowed Hosts' in settings.py file
+
+### Setting up AWS
+
+
+
+
+
+
+4. From the dashboard, go to the "Deploy" tab and under "Deployment method" choose Github.
+5. Search for your repository name and click on "Connect". 
+6. Next, go to the "Settings" tab and scroll down to "Config Vars", click on "Reveal Config Vars".
+
+
 ## Credits
 ### Content
 
@@ -204,7 +264,7 @@ Any small snippets used have been credited within the code where used.
 
 Product images as credited above.
 
-Image of wine bottle and glass used for logo: 
+Image of wine bottle and glass used for logo from [kindpng.com](https://www.kindpng.com/imgv/TiRhmwo_wine-wine-bottle-and-glass-clipart-hd-png/)
 
 Imge used on home page background: Photo by <a href="https://unsplash.com/@kymellis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kym Ellis</a> on <a href="https://unsplash.com/@msull21/likes?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
