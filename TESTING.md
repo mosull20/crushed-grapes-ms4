@@ -43,7 +43,7 @@ Checked using the 'Validate by Direct Input' method.
 ___
 ### Lighthouse Testing
 
-After initial Lighthouse Testing, I impleneted some fixes as recommended by Lighthouse to improve certain scores particularly on Accessability, adding aria-label or titles to some button or links and a parent ul that was absent on mobile nav.html. Below are the results from a wide selection of pages across the site. There are some notable results that I am not happy with but within the time contraints of the project, I will have to come back to make further fixes at a later date, particularly to improve the performance on the Mobile views of some pages especially the products page. 
+After initial Lighthouse Testing, I implemented some fixes as recommended by Lighthouse to improve certain scores particularly on Accessability, adding aria-label or titles to some button or links and a parent ul element that was absent on mobile nav.html. Below are the results from a wide selection of pages across the site. There are some notable results that I am not happy with but within the time contraints of the project, I will have to come back to make further fixes at a later date, particularly to improve the performance on the Mobile views of some pages especially the products page. 
 
 * Home page desktop
 
@@ -129,7 +129,7 @@ Products Page:
 * Nav bar and footer tested as above
 * Products display as expected. On scrolling down, clicking on the back to top arrow brings user to the top of the page as expected.
 * Sort By box correctly sorts the products as expected depending on the options chosen.
-* Selecting from the dropdown menu in the Nav bar correclty displays the chosen category and from there the sort by function works as anticpated by only sorting under the currently chosen category - ie. if red wines has been selected from dropdown, the sort by country, price, rating etc. will only return all red wine results with the appropriate filter. 
+* Selecting from the dropdown menu in the Nav bar correctly displays the chosen category and from there the sort by function works as anticpated by only sorting under the currently chosen category - ie. if red wines has been selected from dropdown, the sort by country, price, rating etc. will only return all red wine results with the appropriate filter. 
 
 Product Details Page: 
 
@@ -154,7 +154,7 @@ Shopping Cart Page:
 * Correct display returned to user if no items in shopping cart
 * Items in cart displaying correctly and quantity buttons function as expected here allowing users to increase or decrease quantity in conjunction with the update and remove links. 
 * Continue shopping link functions correctly
-* Secure checkout link funtions correclty and brings user to checkout page
+* Secure checkout link functions correctly and brings user to checkout page
 
 Checkout & Checkout success Pages: 
 
@@ -162,7 +162,7 @@ Checkout & Checkout success Pages:
 * Items in the order display correctly along with form to fill in personal details, delivery information and payment information, along with save info box being checked as default. 
 * Form validation works to ensure form is filled out with valid information.
 * Using Stripe test card number, payment is processed showing a 'payment processing' overlay while awaiting validation from Stripe. The user is redirected to a payment success page (upon a successful payment), showing an order confirmation, a toast message confirming order successfully processed with info that a confirmation email will be sent to the address the user entered.
-* The order confirmation page shows the details of product orders and quantity, along with delivery addess and billing summary, order date and order number and a Back to Shopping link whihc brings the user back to the main products page. 
+* The order confirmation page shows the details of product orders and quantity, along with delivery addess and billing summary, order date and order number and a Back to Shopping link which brings the user back to the main products page. 
 
 
 The following are the steps taken in addition to the above in order to manually test each feature of the website as a logged in user - 
@@ -174,10 +174,10 @@ Product Details Page:
 
 My Account Page: 
 
-* The logged in user upon cliking on the my account link is brought to their profile page showing their saved default delivery info (if they have chosen to save it), along with their order history with each order detailed seperately. Clicking on the order number will bring the user to the confirmation page, same as the checkout success page with the toast alert telling the user that the order had been previously confirmed and confirmation email sent on the order date. 
+* The logged in user upon clicking on the my account link is brought to their profile page showing their saved default delivery info (if they have chosen to save it), along with their order history with each order detailed seperately. Clicking on the order number will bring the user to the confirmation page, same as the checkout success page with the toast alert telling the user that the order had been previously confirmed and confirmation email sent on the order date. 
 * If the user has uploaded any reviews of any wines, these will display on this page also, with links to edit or delete the reviews if user wishes to do so. 
 
-Clicking on the account menu 'Logout option will bring the user to a sign out page prompting user to confirm sign out. 
+Clicking on the account menu 'Logout' option will bring the user to a sign out page prompting user to confirm sign out. 
 
 
 Toast messsages - checked at each testing point and messages always display as expected to inform user of their actions with a success or alert message as appropriate. 
@@ -234,7 +234,7 @@ ___
 10. _view the contents of my shopping cart easily at any stage and see how much the running total is so I can keep track of how much I'm spending_
     + The shopping cart icon on top right of Nav bar displays the current total in price of all the products in the cart. Clicking on this icon will being the user to the shopping cart page where they can review the details of their cart.
 11. _easily checkout and complete my purchase by paying online securely_
-    + From the shopping cart page, the user can clik on the "Secure Checkout" button which brings the user to the checkout page where user can review their order and enter their personal and delivery details along with payment details which are handled securely by Stripe
+    + From the shopping cart page, the user can click on the "Secure Checkout" button which brings the user to the checkout page where user can review their order and enter their personal and delivery details along with payment details which are handled securely by Stripe
 12. _get an email confirmation of my order sent to me_
     + Once payment is processed, an order confirmation is sent by email to the email address provided by the user during the checkout process. 
 13. _read some interesting articles about wine and perhaps learn things I was not aware of_
@@ -243,7 +243,7 @@ ___
 1. _easily register for an account_
     + From the account dropdown menu in the Nav Bar, the user can select 'Create Account' to register their details on the site.
 2. _receive an email confirmation when I register my account_
-    + In order to register an account, users will need to veirfy their details - an email will be sent to the address the user provided with a link to verify.
+    + In order to register an account, users will need to verify their details - an email will be sent to the address the user provided with a link to verify.
 3. _have the site save my delivery info so I don't have to re-enter that each time I order_
     + The "Save Info" box on the checkout page is automatically selected so that users can save their delivery info for next time. This can be unchecked for those that do not wish their details to be saved.
 4. _see my profile and be able to update my delivery details at any time_

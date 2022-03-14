@@ -9,6 +9,8 @@ Crushed Grapes is an online wine store created for educational purposes only for
 ___ 
 ## Contents
 * [UX](#UX)
+* [Wireframes](#wireframes)
+* [Design](#design)
 * [Database](#database)
 * [Features](#features)
 * [Technologies Used](#technologies-used)
@@ -88,7 +90,7 @@ ___
 * Across the site:
     + Navigation bar with logo (linked back to home page), links to home page, wines (subdivided into categories or all wines), FAQ's/Delivery info page, Blog posts page. 
     + Search bar at top of nav bar
-    + Account link to create and account, login or if logged in - links to my profile page, and logout. As an admin, additional options are shown here to manage products and manage blog
+    + Account link to create an account, login or, if logged in - links to my profile page, and logout. As an admin, additional options are shown here to manage products and manage blog
     + Shopping cart link
     + Footer containing links to social media sites and link to Delivery Info/FAq's page
 
@@ -111,13 +113,13 @@ ___
 * Checkout page
     + User can enter all their details here - delivery details and payment details with the option to save these for future checkouts. 
     + User can complete a purchase without needing to be a registered user
-    + User will be updated that payment is processing and will recieve a success message displayed on top right as well as being redirected to a checkout success page which shows a confirmation of their order, details entered etc. and lets the user know a confirmation email will be sent to the email address the user provided.
+    + User will be updated that payment is processing and will receive a success message displayed on top right as well as being redirected to a checkout success page which shows a confirmation of their order, details entered etc. and lets the user know a confirmation email will be sent to the email address the user provided.
 
 * Register/Create Account page
-    + Allows user to create a new account for this site with email verification for enhance security. 
+    + Allows user to create a new account for this site with email verification for enhanced security. 
 
 * Sign In page
-    + Allows already registered user to log in to their account
+    + Allows already registered users to log in to their account
 
 * Add review page   
     + Allows registered users to add a review to any wine using a simple form. If not logged in, it will redirect user to sign in page.
@@ -187,7 +189,7 @@ This project was developed using the Gitpod IDE and pushed to a Github repositor
 
 ### To deploy to Heroku, the following steps were taken:
 
-1. In advance of deployment, Heroku needs the requirements for the project. In Gitpod, create a requirements.txt file using the `pip3 freeze --local > requirements.txt`. Then a Procfile needs to be created with the follwing code and no balnk like follwing it `web: gunicorn crushed_grapes.wsgi:application`. Push these files to your Github Repo.
+1. In advance of deployment, Heroku needs the requirements for the project. In Gitpod, create a requirements.txt file using the `pip3 freeze --local > requirements.txt`. Then a Procfile needs to be created with the follwing code and no blank line following it `web: gunicorn crushed_grapes.wsgi:application`. Push these files to your Github Repo.
 
 2. Go to the [Heroku Website](https://id.heroku.com/login) and log in.
 
@@ -237,7 +239,7 @@ This project was developed using the Gitpod IDE and pushed to a Github repositor
 1. Go to [AWS](https://aws.amazon.com/) and create an account, sign in, and search for S3. 
 2. Open S3 and click on "Create Bucket" which will be used to store static files and images.
 3. Set the bucket name to match the name of your heroku app and select region closest to you. 
-4. Ensure you select the followig settings - 
+4. Ensure you select the following settings - 
     + Uncheck 'Block Public Access settings for this bucket' and acknowledge any warnings as the bucket needs to be public in order to allow public access to our static files.
     + Object Ownership - ensure 'ACL's enabled' is checked along with 'Bucket Owner preferred'
     + Properties tab, turn on static website hosting
@@ -280,9 +282,9 @@ This project was developed using the Gitpod IDE and pushed to a Github repositor
  ]
 ```
 
-8. Click 'Next' to go through to the nextpage and on to the 'Review Policy' tab and 'Create Policy'.
+8. Click 'Next' to go through to the next page and on to the 'Review Policy' tab and 'Create Policy'.
 
-9. To attach the policy, click on "User Groups", select your group, go to the 'Permissions' tab, open the 'Add Permisssions dropdown, and click 'Attach policies'. Select the policy and click 'Add permissions' at the bottom.
+9. To attach the policy, click on "User Groups", select your group, go to the 'Permissions' tab, open the 'Add Permissions' dropdown, and click 'Attach policies'. Select the policy and click 'Add permissions' at the bottom.
 
 10. Next, create a user: In the IAM dashboard, click on 'Users' and then 'Add User'. 
     + Set the user name, then select 'Programmatic access' under 'Access Type' and select 'Next'.
@@ -350,6 +352,10 @@ I also used a small number of images & product detail from [SuperValu.ie](https:
 Blog Post on Food Pairing - content taken from [The Wine Cellar Group](https://www.thewinecellargroup.com/wine-pairing-tips-for-beginners/)
 
 Blog Post on how to choose wine - content taken from [GQ](https://www.gq.com/story/how-to-choose-wine-like-a-pro-in-any-situation)
+
+Blog Post on What is new world wine now - content taken from [go-wine.com](https://www.go-wine.com/wine-article-3635-what-does-new-world-mean-in-wine-now.html)
+
+Blog Post on Corks vs Screw Tops taken from [Wine Folly](https://winefolly.com/tips/corks-vs-screw-caps/)
 
 ### Code
 
