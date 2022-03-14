@@ -182,25 +182,6 @@ ___
 
 This project was developed using the Gitpod IDE and pushed to a Github repository with the use of Git version control. The project was then deployed using Heroku.
 
-### To Clone or Fork this project
-
-To clone or fork this project you will need a [Github](https://github.com/) account.
-
-To Fork this project:
-
-1. Open the [Project repository homepage](https://github.com/mosull20/crushed-grapes-ms4).
-2. At the top right of the repository page, above the settings button, click on the **Fork** button.
-3. This will create a copy of this project in your own GitHub account.
-
-To Clone this project:
-1. Open the [Project repository homepage](https://github.com/mosull20/crushed-grapes-ms4).
-2. Click on the **Code** button at the top right of the file list.
-3. Under **Clone** with the HTTPS option selected, copy the url link.
-4. In your local IDE, open the terminal.
-5. Change the current working directory to the location where you want the cloned directory.
-6. Type in `git clone` and then paste the url you copied in step 3.
-7. Press enter and your local clone will be created.
-
 ### To deploy to Heroku, the following steps were taken:
 
 1. In advance of deployment, Heroku needs the requirements for the project. In Gitpod, create a requirements.txt file using the `pip3 freeze --local > requirements.txt`. Then a Procfile needs to be created with the follwing code and no balnk like follwing it `web: gunicorn crushed_grapes.wsgi:application`. Push these files to your Github Repo.
@@ -228,16 +209,130 @@ To Clone this project:
 
 12. Add the host name of the Heroku app into "Allowed Hosts' in settings.py file
 
+13. To enable automatic deployment, in the Heroku dashboard, go to the 'Deployment' tab, set the deployment to 'Github' and search for your repository. Click 'Connect' then 'Enable Automatic Deployments'
+
+### Environment Variables 
+
+1. Set the environment variables in Heroku under 'Settings' and 'Reveal Config Vars' 
+
+| Key       | Value        | 
+| --------- |:------------:| 
+| AWS_ACCESS_KEY_ID  | aws-access-key |
+| AWS_SECRET_ACCESS_KEY  | aws-secret-access-key | 
+| DATABASE_URL |   database-url-postgres   | 
+| EMAIL_HOST_PASS | email-key |
+| EMAIL_HOST_USER | host-email |
+| SECRET_KEY | secret-key |
+| STRIPE_PUBLIC_KEY | Stripe-public-key |
+| STRIPE_SECRET_KEY | Stripe-secret-key |
+| STRIPE_WH_SECRET |Stripe-webhook-secret-key |
+| USE_AWS | True |
+
+
 ### Setting up AWS
 
+1. Go to [AWS](https://aws.amazon.com/) and create an account, sign in, and search for S3. 
+2. Open S3 and click on "Create Bucket" which will be used to store static files and images.
+3. Set the bucket name to match the name of your heroku app and select region closest to you. 
+4. Ensure you select the followig settings - 
+    + Uncheck 'Block Public Access settings for this bucket' and acknowledge any warnings as the bucket needs to be public in order to allow public access to our static files.
+    + Object Ownership - ensure 'ACL's enabled' is checked along with 'Bucket Owner preferred'
+    + Properties tab, turn on static website hosting
+    + Permissions tab - paste in the following CORS configuration - 
+```
+        [
+            {
+            "AllowedHeaders": [
+            "Authorization"
+            ],
+            "AllowedMethods": [
+            "GET"
+            ],
+            "AllowedOrigins": [
+            "*"
+            ],
+            "ExposeHeaders": []
+            }
+        ]
+```
+5. Navigate to the 'Bucket Policy' Section and select policy generator. 
+    + The policy type will be an S3 bucket policy. 
+    + Allow all principles using '*'
+    + Action will be 'Get Object'
+    + Copy the ARN from the bucket policy editor tab and paste in to ARN box
+    + Click on 'Add Statement' and then 'Generate Policy'
+    + Copy this policy into the bucket policy editor and before saving add '/*' onto the end of the resource key to allow full access to all resources in this bucket.
+
+6. Go to the Access Control List section, click 'Edit' and enable 'List for Everyone (public access)' and accept the warning box and save.
+
+7. Next search for IAM (Identity and Access Management) in the main search bar in AWS. 
+    + Under 'Access Management' click on 'User Groups' to create a new group.
+    + Give the group a name and click 'Create Group'
+    + Under 'Access Management' click on 'Policies' and then 'Create Policy'.
+    + Click on 'JSON' tab and select 'Import Managed Policy', search for S3 and import the full S3 access policy, then paste in the bucket ARN from the bucket policy page in S3 in the "Resource" section as below - 
+```
+ "Resource": [
+     "your ARN",
+     "your ARN/*"
+ ]
+```
+
+8. Click 'Next' to go through to the nextpage and on to the 'Review Policy' tab and 'Create Policy'.
+
+9. To attach the policy, click on "User Groups", select your group, go to the 'Permissions' tab, open the 'Add Permisssions dropdown, and click 'Attach policies'. Select the policy and click 'Add permissions' at the bottom.
+
+10. Next, create a user: In the IAM dashboard, click on 'Users' and then 'Add User'. 
+    + Set the user name, then select 'Programmatic access' under 'Access Type' and select 'Next'.
+    + Select the group to add the user to, then click next, through to the end and click 'Create User'. 
+
+11. Download the CSV file which will contain the user's access keys.
 
 
+### Connecting Django to AWS
 
+1. Install `boto3` and `django-storages` and add to requirements.txt
+2. Add 'storages' to installed apps in settings.py
+3. Add the following settings in settings.py
+```
+if 'USE_AWS' in os.environ:
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'your-bucket-name'
+    AWS_S3_REGION_NAME = 'your-region'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
 
-4. From the dashboard, go to the "Deploy" tab and under "Deployment method" choose Github.
-5. Search for your repository name and click on "Connect". 
-6. Next, go to the "Settings" tab and scroll down to "Config Vars", click on "Reveal Config Vars".
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    
+```
+
+### To Clone or Fork this project
+
+To clone or fork this project you will need a [Github](https://github.com/) account.
+
+To Fork this project:
+
+1. Open the [Project repository homepage](https://github.com/mosull20/crushed-grapes-ms4).
+2. At the top right of the repository page, above the settings button, click on the **Fork** button.
+3. This will create a copy of this project in your own GitHub account.
+
+To Clone this project:
+1. Open the [Project repository homepage](https://github.com/mosull20/crushed-grapes-ms4).
+2. Click on the **Code** button at the top right of the file list.
+3. Under **Clone** with the HTTPS option selected, copy the url link.
+4. In your local IDE, open the terminal.
+5. Change the current working directory to the location where you want the cloned directory.
+6. Type in `git clone` and then paste the url you copied in step 3.
+7. Press enter and your local clone will be created.
+
 
 
 ## Credits
